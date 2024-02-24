@@ -1,5 +1,6 @@
+from itertools import tee
+
 from matplotlib import pyplot
-import itertools
 
 
 def get_p_value(results, threshold):
@@ -27,7 +28,7 @@ def get_slope_and_intercept(x1, y1, x2, y2):
 
 
 def pairwise(iterable):
-    a, b = itertools.tee(iterable)
+    a, b = tee(iterable)
     next(b)
     return zip(a, b)
 
