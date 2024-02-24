@@ -1,0 +1,65 @@
+\documentclass[preprint,12pt, a4paper]{elsarticle}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+
+\usepackage[colorlinks=true,hyperfootnotes=true,breaklinks=true]{hyperref}
+\usepackage[capitalise]{cleveref}
+
+	
+
+\begin{document}
+
+\title{Nonparametric comparison of  input output curves in electrophysiology.} 
+
+\author[label1]{Patrick Michalik}
+\author[label2]{Tomasz Wójtowicz}
+\author[label2]{Jakub Włodarczyk}
+\author[label3]{Błażej Ruszczycki}
+\address[label1]{AGH University of Science and Technology, Faculty of Electrical Engineering,
+Automatics, Computer Science and Biomedical Engineering, al. Mickiewicza 30 B1, 30-059 Kraków, Poland}
+\address[label2]{Nencki Institute of Experimental Biology, Pasteura 3, 02-093 Warsaw, Poland}
+\address[label3]{AGH University of Science and Technology, Faculty of Physics and Applied Computer Science, al. Mickiewicza 30 D10, 30-059 Kraków, Poland}
+
+\begin{abstract}
+    o
+    
+\end{abstract}
+
+\date{\today}
+
+\maketitle
+
+\section{Introduction}
+
+ Nonparametric tests relax distribution assumptions \cite{krzywinski}
+comparison of regression curves \cite{Neumeyer}    
+
+
+\section{Nonparametric statistics}
+
+In the following section, we present the computational approach, used to estimate the p-value, using nonparametric randomization.
+Initially, for the reason of simplicity, we consider only two experimental groups. Later, the method is generealized to arbitrary number of groups.
+
+In the presented design, the basic object with which we operate, is the input-output curve, denoted as $f_{g,s,m}(x)$, where $g$ denotes the experimental group, $s$ denotes the subject in the experimental group, $m$ denotes the number of the measrurement for the given subject and $x$ denotes the contiuous within-subject parameter (the excitation voltage).  For the null hypothesis $H_0$,we assume that the input-output curves do not depend statistically on the experimental groups.  The null hypothesis $H_0$ is represented by the set of curves in the  randomized ensemble $\tilde{f}^{[k]}_{g,a,s}(x)$, where $k$ numbers the subsequent randomizations.
+
+The p-value is computed by performing the ranking of the difference between the actual curves and the curves from the randomized ensemble.
+In order to prepare such a ranking, we need to compare quantitatively different input-output curves.
+
+\section{Results}
+\section{Materials and methods}
+
+\subsection{Randomized ensemble}
+We perform the conditional randomization, creating new expermental gru
+\subsection{L2 measure}
+
+\section{Discussion}
+
+ \bibliography{inout} 
+\bibliographystyle{ieeetr}
+
+ 
+\end{document}
