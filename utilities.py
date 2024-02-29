@@ -1,6 +1,7 @@
 from itertools import tee
 
 from matplotlib import pyplot
+from matplotlib.pyplot import hist, axvline
 
 
 def get_p_value(results, threshold):
@@ -27,13 +28,14 @@ def get_slope_and_intercept(x1, y1, x2, y2):
     return m, b
 
 
+def draw_l2_histogram(results, threshold, bin_count, title):
+    pyplot.title(title)
+    hist(results, bin_count)
+    axvline(x=threshold, c="r")
+
+
 def pairwise(iterable):
     a, b = tee(iterable)
     next(b)
     return zip(a, b)
 
-
-def draw_l2_histogram(results, threshold, bin_count, title):
-    pyplot.title(title)
-    pyplot.hist(results, bin_count)
-    pyplot.axvline(x=threshold, c="r")
