@@ -1,7 +1,8 @@
 from itertools import tee
 
 from matplotlib import pyplot
-from matplotlib.pyplot import hist, axvline
+from matplotlib.pyplot import hist, axvline, xscale, gca
+from numpy import geomspace
 
 
 def get_p_value(results, threshold):
@@ -32,6 +33,13 @@ def draw_l2_histogram(results, threshold, bin_count, title):
     pyplot.title(title)
     hist(results, bin_count)
     axvline(x=threshold, c="r")
+
+
+def draw_p_value_histogram(results, bin_count, title):
+    pyplot.title(title)
+    hist(results, bins=geomspace(min(results), max(results), bin_count))
+    xscale("log")
+    gca().invert_xaxis()
 
 
 def pairwise(iterable):
