@@ -30,9 +30,10 @@ def get_slope_and_intercept(x1, y1, x2, y2):
 
 
 def draw_l2_histogram(results, threshold, bin_count, title):
-    pyplot.title(title)
-    hist(results, bin_count)
-    axvline(x=threshold, c="r")
+    fig=pyplot.figure(dpi=60)
+    ax=fig.add_subplot(111,title=title)
+    ax.hist(results, bin_count)
+    ax.axvline(x=threshold, c="r")
 
 
 def draw_p_value_histogram(results, bin_count, title):

@@ -35,9 +35,17 @@ class AnimalResults:
             )
 
     def plot(self, title):
-        pyplot.title(title)
+        fig=pyplot.figure(dpi=60)
+        ax=fig.add_subplot(111)
         for i, r in enumerate(self.results):
-            pyplot.plot(self.currents, r.responses, color=self.group_colors[r.group_id])
+            ax.plot(self.currents, r.responses, color=self.group_colors[r.group_id])
+        return(fig)			
+	
+    def get_total_average(self):
+        values=[]
+        for i, r in enumerate(self.results):
+            values.append(r.responses)
+        return(mean(values,axis=0))
 
     def group_by_animal(self):
         animal_ids = {r.animal_id for r in self.results}
