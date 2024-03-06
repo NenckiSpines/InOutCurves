@@ -11,7 +11,9 @@ class AnimalResult:
     group_id: str
 
     @staticmethod
-    def from_csv_row(csv_row, currents):
+    def from_csv_row(csv_row, currents, excluded_group_ids):
+        if csv_row[0] in excluded_group_ids:
+            return None
         responses = []
         missing_response_indices = []
         for i, response in enumerate(csv_row[2:]):
@@ -24,7 +26,7 @@ class AnimalResult:
             del currents_with_responses[mri]
         interpolated_responses = interp1d(currents_with_responses, responses)
         return AnimalResult(
-            animal_id=int(csv_row[1]),
+            animal_id=csv_row[1],
             responses=[interpolated_responses(c) for c in currents],
             group_id=csv_row[0],
         )
