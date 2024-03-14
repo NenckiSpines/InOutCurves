@@ -1,31 +1,30 @@
-\documentclass[preprint,12pt, a4paper]{elsarticle}
-
-\usepackage{amsmath}
-\usepackage{amsfonts}
+\documentclass[fleqn,10pt]{wlscirep}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{subcaption}
+%\usepackage{authblk}
+%\usepackage{subcaption}
 
-
-\usepackage[colorlinks=true,hyperfootnotes=true,breaklinks=true]{hyperref}
-\usepackage[capitalise]{cleveref}
 
 	
 
 \begin{document}
 
-\title{Nonparametric comparison of  input output curves in electrophysiology.} 
+\title{Nonparametric comparison of  input output curves in extracellular brain electrophysiology.} 
 
-\author[label1]{Patrick Michalik}
-\author[label2]{Tomasz Wójtowicz}
-\author[label2]{Jakub Włodarczyk}
-\author[label3]{Błażej Ruszczycki}
-\address[label1]{AGH University of Science and Technology, Faculty of Electrical Engineering,
+\author[1]{Patrick Michalik}
+\author[2]{Tomasz Wójtowicz}
+\author[2]{Jakub Włodarczyk$^\#$}
+\author[3]{Błażej Ruszczycki*}
+\affil[1]{AGH University of Science and Technology, Faculty of Electrical Engineering,
 Automatics, Computer Science and Biomedical Engineering, al. Mickiewicza 30 B1, 30-059 Kraków, Poland}
-\address[label2]{Nencki Institute of Experimental Biology, Pasteura 3, 02-093 Warsaw, Poland}
-\address[label3]{AGH University of Science and Technology, Faculty of Physics and Applied Computer Science, al. Mickiewicza 30 D10, 30-059 Kraków, Poland}
+\affil[2]{Nencki Institute of Experimental Biology, Pasteura 3, 02-093 Warsaw, Poland}
+\affil[3]{AGH University of Science and Technology, Faculty of Physics and Applied Computer Science, al. Mickiewicza 30 D10, 30-059 Kraków, Poland}
+\affil[$^\#$]{corresponding.author@email.example}
+\affil[*]{corresponding.author@email.example}
 
 \begin{abstract}
-    o
+    
     
 \end{abstract}
 
@@ -35,31 +34,65 @@ Automatics, Computer Science and Biomedical Engineering, al. Mickiewicza 30 B1, 
 
 \section{Introduction}
 
- Nonparametric tests relax distribution assumptions \cite{krzywinski}
-comparison of regression curves \cite{Neumeyer}    
+A) INPUT-OUTPUT CURVES IN BRAIN ELECTROPHYSIOLOGY.
+
+B) WHY DO WE NEED TO COMPARE THE CURVES 
+
+ 
+C) WHY IS THE STATISTICS /PARAMETRIC/ PROBLEMATIC?
 
 
-\section{Nonparametric statistics}
+At the first glance, mixed model ANOVA test with two different types of factor variables (between-subjects factors represented by the groups) and within-subjects factors (represented by the excitation voltage), has formally a proper structure to be considered as an appropriate test for in-out curves comparison. However, the test makes a number of restrictive assumptions regarding the data, such as normality, homogeneity of variances between the groups of the between-subjects factors, assumption of sphericity, i.e.,  the variance of the differences between within-subjects, homogeneity of covariances. Moveover, mixed model ANOVA is intended to be a method used to test both for statistical significance of both between-subjects factors and within-subjects factors. For the input-output curves, there is no question whether the excitation voltages is a statistically-significant factor. It is a'priori known, that the values of the output current drastically depend on the excitation voltage, and that in most cases, the associated variance is definitely larger than the between-subjects variance.
+Other methods of comparison the input output curves include ANOVA, ACNOVA, comparison of regression curves \cite{Neumeyer}, or fitting sigmoid function to the inputo-output curves and performing statistics on the parameteres of the fit. 
 
-In the following section, we present the computational approach, used to estimate the p-value, using nonparametric randomization.
-Initially, for the reason of simplicity, we consider only two experimental groups. Later, the method is generealized to arbitrary number of groups.
+For all of the above approaches, certain assumptions for the characteristic of the data are made, either to fulfill the conditions of the parametric tests validity, or to math with the form of the fitted curve. On the other hand, nonparametric tests relax distribution and cross-correlation assumptions \cite{krzywinski}
 
-In the presented design, the basic object with which we operate, is the input-output curve, denoted as $f_{g,s,m}(x)$, where $g$ denotes the experimental group, $s$ denotes the subject in the experimental group, $m$ denotes the number of the measrurement for the given subject and $x$ denotes the contiuous within-subject parameter (the excitation voltage).  For the null hypothesis $H_0$,we assume that the input-output curves do not depend statistically on the experimental groups.  The null hypothesis $H_0$ is represented by the set of curves in the  randomized ensemble $\tilde{f}^{[k]}_{g,a,s}(x)$, where $k$ numbers the subsequent randomizations.
+D) HOW DO PEOPLE COMPARE CURVES
 
-The p-value is computed by performing the ranking of the difference between the actual curves and the curves from the randomized ensemble.
-In order to prepare such a ranking, we need to compare quantitatively different input-output curves.
+anova\cite{sunggu}, \cite{maciver}, \cite{zaitsev}, \cite{inestrosa}, \cite{rosahl},  \cite{weeber}
+
+E) WHAT WE DO IN THE ARTICLE
+We propose and evaluate a methon of nonparametric comparison of input-output curves based on data randomization and L2 norm. 
+
+Simulation studies are conducted to validate the proposed method. 	
+Simulations with a'priory known features
+
+We study test sensitivity by estimating false negative rate    
+
+
+\section{Non-parametric test}
+
+In the following section, we present the computational details of the non-parametric test intended for the comparison of the input-ouput cirves. The test is based on data randomization, and calculation of the $L2$ norm.
+Initially, for the reason of simplicity, we consider only two experimental groups, with different subjects in each group, possibly multiple samples per subject, and multiple measurements per sample. Later, the method is generealized to arbitrary number of groups. We also include the scenario of repeated measurements per subject, i.e., the case with two within subject factor, one of them being the excitation current. the second one representing, for example, pre/post treatment categorization. 
+
+In the discussed design, the basic object with which we operate, is the input-output curve, denoted as $f_{g,s,m}(x)$, where $g$ denotes the experimental group, $s$ denotes the subject in the experimental group, $m$ denotes the number of the measrurement for the given subject and $x$ denotes the contiuous within-subject parameter (the excitation voltage). In case of two experimental groups, the experiment is represented by two sets of $f_{g=1,s,m}(x)$ and $f_{g=2,s,m}(x)$ curves, with possibly different number of subjects in each group, and different number of repetition for each subject. 
+For the null hypothesis $H_0$, we assume that the input-output curves do not depend statistically on the experimental groups.  We represent the null hypothesis $H_0$ by the set of curves in the  randomized ensemble $\tilde{f}^{[k]}_{g,a,s}(x)$, where $k$ numbers the subsequent randomizations.
+
+For the purpose of computing the p-value, we need to prepare a ranking, which includes the quantitative difference between the actual curves for both experimental groups, and the set of differences between curves from the randomized ensemble. 
+In order to make such a ranking possible, we need first to able to compare quantitatively different input-output curves.
+$L2_{actual}$ and $L2^{[k]}_{rand}$
 
 \section{Results}
+Example of two groups based on experimental data.
+
+Simulation results to estimate false positive rate
+
+Test sensitivity for a-priori known model
+
+Comparison with ANOVA
+
 \section{Materials and methods}
 
 \subsection{Randomized ensemble}
 We perform the conditional randomization, creating new expermental gru
 \subsection{L2 measure}
 
+\subsection{simulated data}
+$\tilde{f}^{[k]}_{g,a,s}(x)=\sigma _{a}f^{CTR}(x)+\sigma _{s}(x)$, where $\sigma _{a}$ and $\sigma _{s}(x)$ are random variables drawn from the Gaussian distribution, respectively for each animal, and each sample and excitation voltage. The first distribution represents variation of the slope of the input-output curve (animal associated), and the second distribution represents the uncorrrelated noise. The parameters for both distributions were calculated by the estimating the variances from the non-linear least squares fits to the actual data.
 \section{Discussion}
 
  \bibliography{inout} 
-\bibliographystyle{ieeetr}
+
 
  
 \end{document}
