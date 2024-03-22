@@ -2,6 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{graphicx}  % This package allows the importing of images
+\usepackage{float}
 %\usepackage{authblk}
 %\usepackage{subcaption}
 
@@ -16,12 +18,13 @@
 \author[2]{Tomasz Wójtowicz}
 \author[2]{Jakub Włodarczyk$^\#$}
 \author[3]{Błażej Ruszczycki*}
-\affil[1]{AGH University of Science and Technology, Faculty of Electrical Engineering,
+\affil[1]{AGH University of Krakow, Faculty of Electrical Engineering,
 Automatics, Computer Science and Biomedical Engineering, al. Mickiewicza 30 B1, 30-059 Kraków, Poland}
 \affil[2]{Nencki Institute of Experimental Biology, Pasteura 3, 02-093 Warsaw, Poland}
-\affil[3]{AGH University of Science and Technology, Faculty of Physics and Applied Computer Science, al. Mickiewicza 30 D10, 30-059 Kraków, Poland}
-\affil[$^\#$]{corresponding.author@email.example}
-\affil[*]{corresponding.author@email.example}
+\affil[3]{AGH University of Krakow, Faculty of Physics and Applied Computer Science,
+Department of Medical Physics and Biophysics, al. A. Mickiewicza 30, 30-059 Krakow, Poland}
+\affil[$^\#$]{j.wlodarczyk@nencki.edu.pl }
+\affil[*]{bruszcz@agh.edu.pl}
 
 \begin{abstract}
     
@@ -45,7 +48,7 @@ C) WHY IS THE STATISTICS /PARAMETRIC/ PROBLEMATIC?
 At the first glance, mixed model ANOVA test with two different types of factor variables (between-subjects factors represented by the groups) and within-subjects factors (represented by the excitation voltage), has formally a proper structure to be considered as an appropriate test for in-out curves comparison. However, the test makes a number of restrictive assumptions regarding the data, such as normality, homogeneity of variances between the groups of the between-subjects factors, assumption of sphericity, i.e.,  the variance of the differences between within-subjects, homogeneity of covariances. Moveover, mixed model ANOVA is intended to be a method used to test both for statistical significance of both between-subjects factors and within-subjects factors. For the input-output curves, there is no question whether the excitation voltages is a statistically-significant factor. It is a'priori known, that the values of the output current drastically depend on the excitation voltage, and that in most cases, the associated variance is definitely larger than the between-subjects variance.
 Other methods of comparison the input output curves include ANOVA, ACNOVA, comparison of regression curves \cite{Neumeyer}, or fitting sigmoid function to the inputo-output curves and performing statistics on the parameteres of the fit. 
 
-For all of the above approaches, certain assumptions for the characteristic of the data are made, either to fulfill the conditions of the parametric tests validity, or to math with the form of the fitted curve. On the other hand, nonparametric tests relax distribution and cross-correlation assumptions \cite{krzywinski}
+For all of the above approaches, certain assumptions for the characteristic of the data are made, either to fulfill the conditions of the parametric tests validity, or to match with the form of the fitted curve. On the other hand, nonparametric tests relax distribution and cross-correlation assumptions \cite{krzywinski}
 
 D) HOW DO PEOPLE COMPARE CURVES
 
@@ -68,8 +71,27 @@ Initially, for the reason of simplicity, we consider only two experimental group
 In the discussed design, the basic object with which we operate, is the input-output curve, denoted as $f_{g,s,m}(x)$, where $g$ denotes the experimental group, $s$ denotes the subject in the experimental group, $m$ denotes the number of the measrurement for the given subject and $x$ denotes the contiuous within-subject parameter (the excitation voltage). In case of two experimental groups, the experiment is represented by two sets of $f_{g=1,s,m}(x)$ and $f_{g=2,s,m}(x)$ curves, with possibly different number of subjects in each group, and different number of repetition for each subject. 
 For the null hypothesis $H_0$, we assume that the input-output curves do not depend statistically on the experimental groups.  We represent the null hypothesis $H_0$ by the set of curves in the  randomized ensemble $\tilde{f}^{[k]}_{g,a,s}(x)$, where $k$ numbers the subsequent randomizations.
 
-For the purpose of computing the p-value, we need to prepare a ranking, which includes the quantitative difference between the actual curves for both experimental groups, and the set of differences between curves from the randomized ensemble. 
-In order to make such a ranking possible, we need first to able to compare quantitatively different input-output curves.
+For the purpose of computing the p-value, we need to prepare a ranking, which includes the quantitative difference between the actual curves for both experimental groups, and the multiple values representing a set of differences between curves from the randomized ensemble. 
+In order to make such a ranking possible, we need first to provide a quantitative measure of how much the curves deviate overall from each other. 
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=130mm]{f1.png}
+\end{figure}
+
+To this end, we exploit $L2$ norm, defined as 
+\begin{equation}
+L2=\sqrt{\int^{x_{max}}_{x_{min}}(f_1-f_2)^2 dx},
+\end{equation}
+for two continuous curves $f_1$ and $f_2$, where $x_{min}$ and $x_{max}$ are the limits of the curves argument. In our case, we have curves represented by the discrete set of points, thus we compute the integral explicitely, using a linear interpolation for between-points values, see Materials and Methods.  
+
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=100mm]{f2.png}
+\end{figure}
+
+
 $L2_{actual}$ and $L2^{[k]}_{rand}$
 
 \section{Results}
@@ -77,6 +99,17 @@ Example of two groups based on experimental data.
 
 Simulation results to estimate false positive rate
 
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=160mm]{f3.png}
+\end{figure}
+
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=110mm]{f4.png}
+\end{figure}
 Test sensitivity for a-priori known model
 
 Comparison with ANOVA
