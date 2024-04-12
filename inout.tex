@@ -44,9 +44,12 @@ B) WHY DO WE NEED TO COMPARE THE CURVES
  
 C) WHY IS THE STATISTICS /PARAMETRIC/ PROBLEMATIC?
 
+Formally, the data represented bu in-out curves with different subjects in the experimental groups, are compatible with the structure of the mixed model ANOVA test with two different types of factor variables (between-subjects factors represented by the groups) and within-subjects factors (represented by the excitation voltage). The case of repeated measurements on the same subjects,  corresponds to the structure of two-way repeated measurements ANOVA with two within-subjects factors (excitation voltage, and e.g. pre/post treatment categorization.). The general case 
 
-At the first glance, mixed model ANOVA test with two different types of factor variables (between-subjects factors represented by the groups) and within-subjects factors (represented by the excitation voltage), has formally a proper structure to be considered as an appropriate test for in-out curves comparison. However, the test makes a number of restrictive assumptions regarding the data, such as normality, homogeneity of variances between the groups of the between-subjects factors, assumption of sphericity, i.e.,  the variance of the differences between within-subjects, homogeneity of covariances. Moveover, mixed model ANOVA is intended to be a method used to test both for statistical significance of both between-subjects factors and within-subjects factors. For the input-output curves, there is no question whether the excitation voltages is a statistically-significant factor. It is a'priori known, that the values of the output current drastically depend on the excitation voltage, and that in most cases, the associated variance is definitely larger than the between-subjects variance.
+However, the test makes a number of restrictive assumptions regarding the data, such as normality, homogeneity of variances between the groups of the between-subjects factors, assumption of sphericity, i.e.,  the variance of the differences between within-subjects, homogeneity of covariances. Moveover, mixed model ANOVA is intended to be a method used to test both for statistical significance of both between-subjects factors and within-subjects factors. For the input-output curves, there is no question whether the excitation voltages is a statistically-significant factor. It is a'priori known, that the values of the output current drastically depend on the excitation voltage, and that in most cases, the associated variance is definitely larger than the between-subjects variance.
 Other methods of comparison the input output curves include ANOVA, ACNOVA, comparison of regression curves \cite{Neumeyer}, or fitting sigmoid function to the inputo-output curves and performing statistics on the parameteres of the fit. 
+
+Another important issue is the dependence of the test sensitivity on the number of subjects inthe experiment.
 
 For all of the above approaches, certain assumptions for the characteristic of the data are made, either to fulfill the conditions of the parametric tests validity, or to match with the form of the fitted curve. On the other hand, nonparametric tests relax distribution and cross-correlation assumptions \cite{krzywinski}
 
@@ -54,7 +57,16 @@ D) HOW DO PEOPLE COMPARE CURVES
 
 anova\cite{sunggu}, \cite{maciver}, \cite{zaitsev}, \cite{inestrosa}, \cite{rosahl},  \cite{weeber}
 
-E) WHAT WE DO IN THE ARTICLE
+
+E) WHY THE PAPER IS IMPORTANT
+
+a) different methods of comparision can lead to different conclusion- there was no systematic study what is the difference for obtained pvalues, for that particulat type of data
+b) paramettric tests rely on heavy assumptions- it is not clear, if for in-out curves, in general, these assumptions are satisfied, if they are violated, how much, and what happens to the tests if they are violated.
+c) outliers are problematic for parametric tests- removed from the data subjectively.
+d) we need non-parametric approach,if assumptions are clearly violated, (nonsigmoid curves, outliers, nongaussian)
+e) no systematic study and validation for the particular type of data
+
+F) WHAT WE DO IN THE ARTICLE
 We propose and evaluate a methon of nonparametric comparison of input-output curves based on data randomization and L2 norm. 
 
 Simulation studies are conducted to validate the proposed method. 	
@@ -118,10 +130,15 @@ Comparison with ANOVA
 
 \subsection{Randomized ensemble}
 We perform the conditional randomization, creating new expermental gru
+
+
+For very small p-values, the actual value of $L2$ norm lies in the tail of the $L2_{rnd}$ distribution. In this case, the discrette character of the distribution is percepted, resulting in the discretization of p-values levels, and the p-values jitter. In order to counteract these effects, if there are not enough values in the tail of the $L2_{rnd}$ distribution to provide the desired variance of calculated p-values, we dynamically increase the number of randomizations up the $RND_{limit}$. The maximal number of randomizations is restricted to ensure the acceptable computational time, for the cases of extremely small p-values, and any resulting p-value smaller than $0.001$ is reported as "$p_{val}<0.001$" for the reason that precise p-values representing extreme results are sensitive to biases or limitations of precision in numerical representation.
 \subsection{L2 measure}
 
 \subsection{simulated data}
-$\tilde{f}^{[k]}_{g,a,s}(x)=\sigma _{a}f^{CTR}(x)+\sigma _{s}(x)$, where $\sigma _{a}$ and $\sigma _{s}(x)$ are random variables drawn from the Gaussian distribution, respectively for each animal, and each sample and excitation voltage. The first distribution represents variation of the slope of the input-output curve (animal associated), and the second distribution represents the uncorrrelated noise. The parameters for both distributions were calculated by the estimating the variances from the non-linear least squares fits to the actual data.
+Two diffrent classes of the simulated data have been constructed,
+The set of two groups, statistically identical, is represented by the curves 
+$\tilde{f}^{[k]}_{g,a,s}(x)=\sigma _{a}f^{BASE}(x)+\sigma _{n}(x)$, where $\sigma _{a}$ and $\sigma _{n}(x)$ are random variables representing variation of the slope of the input-output curves, and the uncorrrelated noise for each measurements. The curve $f^{BASE}(x)$ has been computed as the average curve in the control groups of the actual data. The random variable $\sigma _{a}$ /the slope/ is drawn from non-gaussian distribution, for each input-output curve. The random variable $\sigma _{n}(x)$ /the noise/ is drawn from the Gaussian distribution for each curve and excitation voltage. The parameters of both distributions, and the shape of the  $\sigma _{a}$ distribution, were calculated by performing the least squares fits to the actual data. 
 \section{Discussion}
 
  \bibliography{inout} 
