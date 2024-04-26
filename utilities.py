@@ -16,7 +16,7 @@ def get_grid_figure(row_count=1, column_count=1):
 
 
 def get_p_value(results, threshold):
-    return len([r for r in results if r >= threshold]) / len(results)
+    return len([r for r in results if r > threshold]) / len(results)
 
 
 def get_l2(fy, gy, x):
@@ -54,7 +54,7 @@ def draw_p_value_comparison_histogram(axes, results, randomization_counts, bin_c
 
 
 def draw_p_value_histogram(axes, results, bin_count, dpi_scale_transform):
-    axes.hist(x=results, bins=geomspace(start=0.025, stop=1, num=bin_count), color=PLOT_COLORS[0])
+    axes.hist(x=results, bins=geomspace(start=0.0005, stop=1, num=bin_count), color=PLOT_COLORS[2])
     text_transform = axes.get_xaxis_transform() + ScaledTranslation(
         xt=-0.0625,
         yt=-0.0625,

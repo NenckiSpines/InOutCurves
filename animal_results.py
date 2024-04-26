@@ -35,7 +35,7 @@ class AnimalResults:
             )
 
     def get_group_ids(self):
-        return {r.group_id for r in self.results}
+        return sorted({r.group_id for r in self.results})
 
     def get_group_colors(self):
         return {gi: color for gi, color in zip(self.get_group_ids(), PLOT_COLORS)}
@@ -75,7 +75,7 @@ class AnimalResults:
             results = []
             grouped_by_group = [[r for r in self.results if r.group_id == gi] for gi in self.get_group_ids()]
             for i in range(len(grouped_by_group[0])):
-                column = [row.pop(i) for row in grouped_by_group]
+                column = [row[i] for row in grouped_by_group]
                 group_ids = [f"{RANDOMIZED_GROUP_ID_PREFIX}{i}" for i in range(len(self.get_group_ids()))]
                 shuffle(group_ids)
                 results.extend([result.copy(gi) for result, gi in zip(column, group_ids)])
