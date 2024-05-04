@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{graphicx}  % This package allows the importing of images
 \usepackage{float}
+\usepackage{bm}
 %\usepackage{authblk}
 %\usepackage{subcaption}
 
@@ -74,7 +75,7 @@ Simulations with a'priory known features
 
 We study test sensitivity by estimating false negative rate    
 
-
+IMPROVEMENT OF REPRODUCIBILITY AND ROBUSTNESS
 \section{Non-parametric test}
 
 In the following section, we present the computational details of the non-parametric test intended for the comparison of the input-ouput cirves. The test is based on data randomization, and calculation of the $L2$ norm.
@@ -101,6 +102,7 @@ for two continuous curves $f_1$ and $f_2$, where $x_{min}$ and $x_{max}$ are the
  \begin{figure}[H]
 \centering
 \includegraphics[width=100mm]{f2.png}
+\caption{Randomizations for non-parametric test. a) Actual L2 norm (the vertical line) and the distribution of L2 norms for randomized data (the histogram). }
 \end{figure}
 
 
@@ -115,14 +117,38 @@ Simulation results to estimate false positive rate
  \begin{figure}[H]
 \centering
 \includegraphics[width=160mm]{f3.png}
+\caption{Simulation study results. Underlying characteristics of input-output curves from actual experiment (a) was used in simulated input-output curves (b,c). The experimental groups, by construction, are \textit{a'priori} statstically identical (a) and statstically different (b). The single replicates from the simulated ensemble (number of replicates $K_{rep}=10000$) are shown, number of subjects in each group $n_{sub}$=10.}
 \end{figure}
 
 
  \begin{figure}[H]
 \centering
 \includegraphics[width=110mm]{f4.png}
+\caption{Statistical significance for ensemble of simultation results. a, Distribution of the $p-values$ for simulated experiments with two groups with no statistical difference.  b, Distribution of the $p-values$ for simulated experiments with two groups that differ statistically. Number of experiment replicates $K_{rep}=10000$, for each case; number of randomizations for each experiment  $N_{rand}=10000$; number of subjects in each group $n_{sub}$=10; simulations assumed different subjects in each group.}
+\label{f4}
 \end{figure}
 Test sensitivity for a-priori known model
+
+
+           \begin{table}[h]
+        \centering
+        \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Metric} & \textbf{$\bm{\alpha}$=0.05} & \textbf{$\bm{\alpha}$=0.01} & \textbf{$\bm{\alpha}$=0.001} \\
+        \hline
+        FPR & 0.0509 & 0.0103 & 0.0005 \\
+FNR & 0.1455 & 0.4251 & 0.9294 \\
+Precision & 0.9438 & 0.9824 & 0.9930 \\
+Specificity & 0.9491 & 0.9897 & 0.9995 \\
+Sensitivity & 0.8545 & 0.5749 & 0.0706 \\
+Accuracy (No Diff) & 0.9018 & 0.7823 & 0.5351 \\
+Accuracy (Diff) & 0.8991 & 0.7786 & 0.5318 \\
+\hline
+\end{tabular}
+\caption{Performance metrics for non-parametric test, calculated for simulated experiments with various asserted statistical significance levels ($\alpha$). See Fig.~\ref{f4} for details of the simulations setup.  FPR (false positive rate),  FNR (false negative rate). }
+\label{tab:rates}
+\end{table}
+
 
 Comparison with ANOVA
 
@@ -133,6 +159,7 @@ We perform the conditional randomization, creating new expermental gru
 
 
 For very small p-values, the actual value of $L2$ norm lies in the tail of the $L2_{rnd}$ distribution. In this case, the discrette character of the distribution is percepted, resulting in the discretization of p-values levels, and the p-values jitter. In order to counteract these effects, if there are not enough values in the tail of the $L2_{rnd}$ distribution to provide the desired variance of calculated p-values, we dynamically increase the number of randomizations up the $RND_{limit}$. The maximal number of randomizations is restricted to ensure the acceptable computational time, for the cases of extremely small p-values, and any resulting p-value smaller than $0.001$ is reported as "$p_{val}<0.001$" for the reason that precise p-values representing extreme results are sensitive to biases or limitations of precision in numerical representation.
+ The p-value is the proportion of samples on the randomization distribution that are more extreme than our observed sample in the direction of the alternative hypothesis.
 \subsection{L2 measure}
 
 \subsection{simulated data}
@@ -142,6 +169,56 @@ $\tilde{f}^{[k]}_{g,a,s}(x)=\sigma _{a}f^{BASE}(x)+\sigma _{n}(x)$, where $\sigm
 \section{Discussion}
 
  \bibliography{inout} 
+
+\newpage
+
+EXTENDED INFORMATION
+
+1. Other datasets FIG 1 
+
+2. Other datasets FIG 2.
+
+3. Tests for gaussian- graphs for data
+
+4. Actual distr for slopa parameters
+
+5. Fitting sigmoids
+
+6. Distributions of p-values with different methods- on one graph/ tables
+
+7. ? Comparison with gaussian model for Anova/
+
+8. Symbols explained
+\newpage
+
+TODO:
+
+PAPER LENGTH: 10 pages + 6 pages of extended material
+
+Better naming: animal\_result, animal\_results, group\_results
+
+Rename animals->subjects in scripts
+
+All defaults constants in one script (Settings.py)
+
+Colors are random now
+
+Generalization to more than 2 groups
+
+Check if same/different subjects- if mixed return error
+
+FPR FNR for diff.numer of subjects
+
+LOG scale on correlation plots
+
+ADD 2-3 other tests to compare
+
+paper quality plots (no bounding box, smaller fonts, thinner lines, label panels)
+
+METHODS: Description of datasets
+
+METHODS: Experimental procedures
+
 
 
  

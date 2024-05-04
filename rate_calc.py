@@ -3,6 +3,7 @@ class RateCalculator:
         self.results = {}
 
     def calculate_rates(self, p_values_no_diff, p_values_diff, alphas=(0.05, 0.01, 0.001)):
+        self.results = {}
         for alpha in alphas:
             fpr_no_diff = sum(p <= alpha for p in p_values_no_diff) / len(p_values_no_diff)
             fnr_diff = sum(p > alpha for p in p_values_diff) / len(p_values_diff)

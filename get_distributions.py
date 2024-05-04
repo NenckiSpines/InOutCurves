@@ -14,14 +14,26 @@ from statsmodels.formula.api import ols
 from statsmodels.stats.anova import AnovaRM 
 from ssqError import DistributionFitter
 import numpy
+from scipy.optimize import curve_fit
+
+
+def third_order_poly(x, a, b, c, d):
+    return a * x**3 + b * x**2 + c * x + d
+
+
 colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'orange', 'purple', 'brown', 'pink', 'gray', 'olive', 'cyan', 'lime', 'teal', 'navy', 'maroon', 'gold', 'indigo', 'darkred']
 
 def find_minimal_a(x, y):
     # Stack the x vector into a matrix with an additional column of ones
-    X = np.vstack((x, np.ones(len(x)))).T
+    #X = np.vstack((x, np.ones(len(x)))).T
     
     # Use least squares to find the optimal 'a' parameter
-    a, _ = np.linalg.lstsq(X, y, rcond=None)[0]
+    #a, _ = np.linalg.lstsq(X, y, rcond=None)[0]
+    x = np.array(x)
+    y = np.array(y)
+
+    # Calculate the least squares solution
+    a = np.dot(x, y) / np.dot(x, x)
     
     return a
 
@@ -68,12 +80,14 @@ class SigmoidFitter:
 animal_results = AnimalResults.from_csv("LTP5_slope.csv")
 #animal_results = AnimalResults.from_csv("result.csv")
 grouped_by_animal = animal_results.group_by_animal()
+print("-1x", grouped_by_animal.results[0])
 #p2=grouped_by_animal.plot("Grouped by animal")
 #print (p2)
 xdata = grouped_by_animal.currents
 grouped_by_group = grouped_by_animal.group_by_group()
 #p3=grouped_by_group.plot("Grouped by group")
 l2 = grouped_by_group.get_l2()
+print("0x", grouped_by_animal.results[0])
 randomized_group_l2s = [grouped_by_animal.randomize_groups().group_by_group().get_l2() for _ in range(1000)]
 figure, axes = plt.subplots()
 draw_l2_histogram(axes=axes, results=randomized_group_l2s, threshold=l2, bin_count=100)
@@ -101,31 +115,43 @@ pre_data={}
 post_data={}
 coeffs=[]
 residuals=[]
-for item in grouped_by_animal.results:
+print("1x", grouped_by_animal.results[0])
+for i,item in enumerate(grouped_by_animal.results):
 	if item.group_id=="PRE":
 		pre_data[item.animal_id]=item.responses
 	else:
 		post_data[item.animal_id]=item.responses
 	acoeff=find_minimal_a(avg_res, item.responses)
 	model_response=numpy.multiply(avg_res, acoeff)
-	residuals.append(numpy.subtract(model_response,item.responses))
+	residual=numpy.subtract(model_response,item.responses)
+	xrange=list(range(len(item.responses)))
+	popt, _ = curve_fit(third_order_poly,xrange,residual)
+# Extract the coefficients
+	a_fit, b_fit, c_fit, d_fit = popt
+
+	#ax5.plot(model_response,color=colors[int(i)%19])
+	#ax5.plot(item.responses,color=colors[int(i)%19],ls="dotted")
+	y_fit = third_order_poly(numpy.array(xrange), a_fit, b_fit, c_fit, d_fit)
+	ax5.plot(residual,color=colors[int(i)%19],ls="dotted")
+	ax5.plot(y_fit,color=colors[int(i)%19],ls="dashed")
 	coeffs.append(acoeff)
+	residuals.append(numpy.subtract(residual,y_fit))
 	
 residuals=numpy.array(residuals)
 variance=numpy.var(residuals,axis=0)
 print ("variance=",variance)
 std=numpy.sqrt(variance)
-print ("std=",std)
+print ("std=",list(std))
 	
 fig2=plt.figure(dpi=60)
 ax2=fig2.add_subplot(111)
 ax2.plot(std)		
 	
-for id in list(post_data.keys()):	
-	diff=numpy.subtract(post_data[id],pre_data[id])
+#for id in list(post_data.keys()):	
+#	diff=numpy.subtract(post_data[id],pre_data[id])
 	#ax1.plot(post_data[id],color=colors[int(id)%19],marker=".")
 	#ax1.plot(post_data[id],color=colors[int(id)%19],marker=".")
-	ax5.plot(diff,color=colors[int(id)%19])
+#	ax5.plot(diff,color=colors[int(id)%19])
 
 
 
