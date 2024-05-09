@@ -111,29 +111,31 @@ if __name__ == "__main__":
 
 
     animal_results = AnimalResults.from_csv(path="LTP5_slope_diffsubjects.csv")
-    file_no_diff='..//data//p_values_NO_9.csv'
-    file_diff='..//data//p_values_DIFF_9.csv'
+    file_no_diff='..//data//p_values_NO_17.csv'
+    file_diff='..//data//p_values_DIFF_17.csv'
 
 
     ref_tests = RefTests(SAME_SUBJECTS)
 
-    if not (os.path.exists(file_no_diff)&os.path.exists(file_no_diff)):
+    if not (os.path.exists(file_no_diff)):
         analyzer = Analyzer()
         analyzer.analyze_data(animal_results, ref_tests)
         analyzer.plot_p_values()
         analyzer.calculate_mean()
-        data_WD=analyzer.p_values
+        data_NO=analyzer.p_values
         np.savetxt(file_no_diff,analyzer.p_values, delimiter=',')
-
-
+    else:
+        data_NO = np.genfromtxt(file_no_diff, delimiter=',')
+    if not (os.path.exists(file_diff)):
+        analyzer = Analyzer()
         analyzer.analyze_data(animal_results, ref_tests,keep_differences=True)
         analyzer.plot_p_values(color="red")
         analyzer.calculate_mean()
-        analyzer.p_values
+        data_WD=analyzer.p_values
         np.savetxt(file_diff,analyzer.p_values, delimiter=',')
     else:
         data_WD = np.genfromtxt(file_diff, delimiter=',')
-        data_NO = np.genfromtxt(file_no_diff, delimiter=',')
+        
 
     Plotter.draw_histograms(data_WD)
     Plotter.draw_histograms(data_NO)
