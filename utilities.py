@@ -11,6 +11,8 @@ def get_grid_figure(row_count=1, column_count=1):
     figure, axes = subplots(nrows=row_count, ncols=column_count, constrained_layout=True, dpi=300)
     figure.set_figwidth(6.4)
     for a in axes.flat:
+        a.spines['top'].set_visible(False)
+        a.spines['right'].set_visible(False)
         a.set_box_aspect(0.75)
     return figure, axes
 
