@@ -30,7 +30,9 @@ def get_l2(fy, gy, x):
 
 
 def get_l2_component(mf, bf, mg, bg, x):
-    return pow(x * (mg - mf) + bg - bf, 3) / (3 * (mg - mf))
+    m = mg - mf
+    b = bg - bf
+    return pow(m, 2) * pow(x, 3) / 3 + m * b * pow(x, 2) + pow(b, 2) * x
 
 
 def get_slope_and_intercept(x1, y1, x2, y2):
