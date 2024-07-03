@@ -7,8 +7,8 @@ from numpy import geomspace
 from constants import PLOT_LINE_WIDTH, PLOT_COLORS, P_VALUE_LABEL, OCCURRENCE_COUNT_LABEL
 
 
-def get_grid_figure(row_count=1, column_count=1):
-    figure, axes = subplots(nrows=row_count, ncols=column_count, constrained_layout=True, dpi=300)
+def get_grid_figure(row_count=1, column_count=1, share_y=False):
+    figure, axes = subplots(nrows=row_count, ncols=column_count, constrained_layout=True, dpi=300, sharey=share_y)
     figure.set_figwidth(6.4)
     for a in axes.flat:
         a.spines['top'].set_visible(False)
