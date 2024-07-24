@@ -44,7 +44,7 @@ In a common view, the number and spatial distribution of inputs such as active a
 
 B) Why do we need to compare the curves
 
-Input-output curves provide insight to how neurons transfer presynaptic activity into output. Studying these curves play important role in analysis of neuroactive compounds, drugs, and temporal or comparative studies in brain physiology or pathophysiology. For instance, relationship between synaptic input and the magnitude of neuronal spiking may be actively enhanced following some behavioural paradigms such has hippocampal learning\cite{Ohno2006-db} and impaired in a number of neurodevelopmental disorders including Fragile X Syndrome\cite{Booker2021-pd}. Simulation methods are also applied to examine how the inputs are transformed by neurons into function of brain regions such as the hippocampus\cite{Olypher2012-wq, De_Almeida2009-bf}. Proper methodological approach to analyse this phenomenon is critical for studies of brain physiology and pathophysiology as well as effects of drugs. However, input-output curves for various preparations show huge variability shapes and do not follow single-function rule. Thus, providing single universal equation and comparing data between experiments is not possible. For instance, some cortical pyramidal neurons exhibit linear input-output relationships (PMID: 26592167, PMID: 25568159) while neurons may exhibit sigmoidal relationship (GABAergic interneuron PMID: 32382046, posteriomedial complex thalamic neuron PMID: 17389627). In case of field-potential studies, similarly shape of the input-output functions is determined by region in the brain and experimental setup (PMID: 28052245, PMID: 26758828, PMID: 20630068, PMID: 11738933, PMID: 29311928). 
+Input-output curves provide insight to how neurons transfer presynaptic activity into output. Studying these curves play important role in analysis of neuroactive compounds, drugs, and temporal or comparative studies in brain physiology or pathophysiology. For instance, relationship between synaptic input and the magnitude of neuronal spiking may be actively enhanced following some behavioural paradigms such has hippocampal learning\cite{Ohno2006-db} and impaired in a number of neurodevelopmental disorders including Fragile X Syndrome\cite{Booker2021-pd}. Simulation methods are also applied to examine how the inputs are transformed by neurons into function of brain regions such as the hippocampus\cite{Olypher2012-wq, De_Almeida2009-bf}. Proper methodological approach to analyse this phenomenon is critical for studies of brain physiology and pathophysiology as well as effects of drugs. However, input-output curves for various preparations show huge variability shapes and do not follow single-function rule. Thus, providing single universal equation and comparing data between experiments is not possible. For instance, some cortical pyramidal neurons exhibit linear input-output relationships (PMID: 26592167, PMID: 25568159) while neurons may exhibit sigmoidal relationship (GABAergic interneuron\cite{ROTH}, posteriomedial complex thalamic neuron\cite{Landisman}). In case of field-potential studies, similarly shape of the input-output functions is determined by region in the brain and experimental setup (PMID: 28052245, PMID: 26758828, PMID: 20630068, PMID: 11738933, PMID: 29311928). 
 Importantly, there is also no standard and common practice how statistically compare input-output functions. Plotted data have been statistically analyzed with sigmoid fit (PMID: 12514207), linear fit (PMID: 25568159), one-way ANOVA (PMID: 31331291), two-way ANOVA~\cite{Klein2014-iz}, two-sided Wilcoxon signed rank test (PMID: 26592167, PMID: 32382046), two-way repeated measures ANOVA~\cite{Chaichim2021-wi}.
   
  
@@ -95,6 +95,7 @@ In order to make such a ranking possible, we need first to provide a quantitativ
  \begin{figure}[H]
 \centering
 \includegraphics[width=130mm]{f1.png}
+\caption{Randomizations for non-parametric test}
 \end{figure}
 
 To this end, we exploit $L2$ norm, defined as 
@@ -107,7 +108,7 @@ for two continuous curves $f_1$ and $f_2$, where $x_{min}$ and $x_{max}$ are the
  \begin{figure}[H]
 \centering
 \includegraphics[width=100mm]{f2.png}
-\caption{Randomizations for non-parametric test. a) Actual L2 norm (the vertical line) and the distribution of L2 norms for randomized data (the histogram). }
+\caption{Actual L2 norm (the vertical line) and the distribution of L2 norms for randomized data (a). Spread of p-values for different repetitions of randomization procedure (b). }
 \end{figure}
 
 
@@ -116,13 +117,14 @@ $L2_{actual}$ and $L2^{[k]}_{rand}$
 \section{Results}
 Example of two groups based on experimental data.
 
-Simulation results to estimate false positive rate
+Simulation results to estimate false positive rate. We created an ensemble of simulated results, representing two groups known a priori to be statistically different. The difference was achieved by using different mean input-output curves as the basis for simulations. We used experimental curves measured for unstimulated neurons, and for neurons after chemical LTP stimulation. THe reason for choice of chemical LTP is that it provides a form of stimulation that mimics the effects of massive synaptic activity, and ......[TOMEK PLEASE FILL THE DETAILS] 
+The simulations enabled us to generate an arbitrary number of experimental replicates, allowing us to estimate test sensitivity and accuracy, as well as to express the test performance metrics as a function of the number of subjects per group.
 
 
  \begin{figure}[H]
 \centering
 \includegraphics[width=160mm]{f3.png}
-\caption{Simulation study results. Underlying characteristics of input-output curves from actual experiment (a) was used in simulated input-output curves (b,c). The experimental groups, by construction, are \textit{a'priori} statstically identical (a) and statstically different (b). The single replicates from the simulated ensemble (number of replicates $K_{rep}=10000$) are shown, number of subjects in each group $n_{sub}$=10.}
+\caption{Input-output curves in simulation studies. The measured input-output curves from actual experiment (a) were used to create simulated input-output curves (b,c). For the simulated curves, the experimental groups are \textit{a'priori} known to be statstically identical (b) and statistically different (c). The single replicates from the simulated ensemble (number of replicates $K_{rep}=10000$) are shown, number of subjects in each group $n_{sub}$=10.}
 \end{figure}
 
 
@@ -169,9 +171,8 @@ Comparison with ANOVA
 \subsection{Randomized ensemble}
 We perform the conditional randomization, creating new expermental gru
 
+For the randomization tests, the finite and discrete nature of randomizations results in the discretization of p-value levels. This discretization can be smoothed out by increasing the number of randomizations. However, the maximum number of randomizations has been restricted to ensure acceptable computational time. In cases of extremely small p-values, any resulting p-value smaller than $0.001$ has been reported as "$p_{val}<0.001$" because precise p-values representing extreme results are sensitive to biases or limitations of precision in numerical representation.
 
-For very small p-values, the actual value of $L2$ norm lies in the tail of the $L2_{rnd}$ distribution. In this case, the discrette character of the distribution is percepted, resulting in the discretization of p-values levels, and the p-values jitter. In order to counteract these effects, if there are not enough values in the tail of the $L2_{rnd}$ distribution to provide the desired variance of calculated p-values, we dynamically increase the number of randomizations up the $RND_{limit}$. The maximal number of randomizations is restricted to ensure the acceptable computational time, for the cases of extremely small p-values, and any resulting p-value smaller than $0.001$ is reported as "$p_{val}<0.001$" for the reason that precise p-values representing extreme results are sensitive to biases or limitations of precision in numerical representation.
- The p-value is the proportion of samples on the randomization distribution that are more extreme than our observed sample in the direction of the alternative hypothesis.
 \subsection{L2 measure}
 
 \subsection{simulated data}
@@ -230,7 +231,6 @@ paper quality plots (no bounding box, smaller fonts, thinner lines, label panels
 METHODS: Description of datasets
 
 METHODS: Experimental procedures
-
 
 
  
