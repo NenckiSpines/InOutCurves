@@ -1,7 +1,15 @@
 import os
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
+from numpy import geomspace
+
+from animal_results import AnimalResults
+from constants import PLOT_COLORS
 from rate_calc import RateCalculator
+from reference_tests import RefTests
+from utilities import get_p_value
+
 DYNAMIC=0
 
 class Plotter:
@@ -49,6 +57,28 @@ class Plotter:
         fig, ax = plt.subplots()
         Plotter.draw_histogram(p_values[:,0],ax)
         Plotter.draw_histogram(p_values[:,1],ax,color="orange")
+
+    @staticmethod
+    def draw_histogram_2(p_values):
+        fig, ax = plt.subplots()
+        ax.set_xscale("log")
+        ax.invert_xaxis()
+        ax.set_xlabel("Actual values")
+        ax.set_ylabel("Frequency")
+        ax.hist(
+            x=p_values[:, 0],
+            bins=geomspace(start=0.0001, stop=1, num=100),
+            color=PLOT_COLORS[2],
+            fill=True,
+            histtype="step",
+        )
+        ax.hist(
+            x=p_values[:, 1],
+            bins=geomspace(start=0.0001, stop=1, num=100),
+            color=PLOT_COLORS[1],
+            fill=False,
+            histtype="step",
+        )
     
     @staticmethod    
     def plot_p_values(p_values,color="blue"):
@@ -60,15 +90,19 @@ class Plotter:
         ax10.plot(sl,sl,ls="-",color="black",marker=None)
 
 class Analyzer:
-    def __init__(self):
-        self.p_values = []
+    quiet: bool
 
-    def analyze_data(self, animal_results, ref_tests, iterations=100,keep_differences=False):
+    def __init__(self, quiet=False):
+        self.p_values = []
+        self.quiet = quiet
+
+    def analyze_data(self, animal_results, ref_tests, iterations=100, keep_differences=False, animals_per_group=10):
         self.p_values = []
         for i in range(iterations):
-            print(i)
+            if not self.quiet:
+                print(i)
             res = []
-            fake = animal_results.to_fake(keep_differences=keep_differences,animals_per_group=10)
+            fake = animal_results.to_fake(keep_differences=keep_differences, animals_per_group=animals_per_group)
             grouped_by_animal = fake.group_by_animal()
             ref_tests.makePdFrame(grouped_by_animal)
             p_value1 = ref_tests.p_anova()
@@ -81,11 +115,13 @@ class Analyzer:
                     randomized_group_l2s = randomized_group_l2s+[grouped_by_animal.randomize_groups().group_by_group().get_l2() for _ in range(10000)]
                     arr = np.array(randomized_group_l2s)
                     count = np.sum(arr > l2)
-                    print (l2, count,len((randomized_group_l2s)))
+                    if not self.quiet:
+                        print(l2, count, len((randomized_group_l2s)))
             else:
                 randomized_group_l2s = randomized_group_l2s+[grouped_by_animal.randomize_groups().group_by_group().get_l2() for _ in range(10000)]
             p_value = get_p_value(randomized_group_l2s, l2)
-            print ("p_values=",p_value,p_value1)
+            if not self.quiet:
+                print("p_values=", p_value, p_value1)
             res.append(p_value)
             res.append(p_value1)
             self.p_values.append(res)
@@ -103,16 +139,12 @@ class Analyzer:
 
 if __name__ == "__main__":
 
-    from animal_results import AnimalResults
-    from utilities import get_grid_figure, get_p_value, draw_l2_histogram
-    from reference_tests import RefTests
-
     SAME_SUBJECTS = 0
 
 
     animal_results = AnimalResults.from_csv(path="LTP5_slope_diffsubjects.csv")
-    file_no_diff='..//data//p_values_NO_17.csv'
-    file_diff='..//data//p_values_DIFF_17.csv'
+    file_no_diff = "data/p_values_NO_17.csv"
+    file_diff = "data/p_values_DIFF_17.csv"
 
 
     ref_tests = RefTests(SAME_SUBJECTS)
@@ -137,8 +169,8 @@ if __name__ == "__main__":
         data_WD = np.genfromtxt(file_diff, delimiter=',')
         
 
-    Plotter.draw_histograms(data_WD)
-    Plotter.draw_histograms(data_NO)
+    Plotter.draw_histogram_2(data_WD)
+    Plotter.draw_histogram_2(data_NO)
     Plotter.plot_p_values(data_NO)
     Plotter.plot_p_values(data_WD,color="red")
 

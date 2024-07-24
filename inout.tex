@@ -175,6 +175,20 @@ For the randomization tests, the finite and discrete nature of randomizations re
 
 \subsection{L2 measure}
 
+The $\ell^2$-norm for two functions $f\left(x\right)$ and $g\left(x\right)$ on the interval
+$\left[x_\text{min.},\;x_\text{max.}\right]$ is
+\[\ell^2=\int_{x_\text{min.}}^{x_\text{max.}}\left(g\left(x\right)-f\left(x\right)\right)^2\text{d}x.\] \texttt{get\_l2}
+operates on two piecewise linear functions $f\left(x\right)$ and $g\left(x\right)$ with equal sets of $n$ segment
+intervals, $\left[x_0,\;x_1\right]$ through $\left[x_n,\;x_{n+1}\right]$. For an interval $\left[x_i,\;x_{i+1}\right]$,
+where $i\in\left[0,\;n\right]$, the slope of the corresponding $f\left(x\right)$ segment is $\left(m_f\right)_i$, and
+the $y$-intercept of the segment is $\left(b_f\right)_i$. Analogously, the slope of the corresponding $g\left(x\right)$
+segment is $\left(m_g\right)_i$, and the $y$-intercept of the segment is $\left(b_g\right)_i$. We have
+\[\ell^2=\sum_{i=0}^n\int_{x_i}^{x_{i+1}}\left(\left(\left(m_g\right)_i-\left(m_f\right)_i\right)x+\left(b_g\right)_i-\left(b_f\right)_i\right)^2\text{d}x.\]
+Let $m_i=\left(m_g\right)_i-\left(m_f\right)_i$, and $b_i=\left(b_g\right)_i-\left(b_f\right)_i$. Then,
+\[\ell^2=\sum_{i=0}^n\int_{x_i}^{x_{i+1}}\left(m_i x+b_i\right)^2\text{d}x.\] Integrating, we obtain
+\[\ell^2 =\sum_{i=0}^{n}\left.\left(\frac{\left(m_i\right)^2x^3}{3}+m_ib_ix^2+\left(b_i\right)^2x\right)\right|_{x_i}^{x_{i+1}}.\]
+This is the formula used by \texttt{get\_l2}.
+
 \subsection{simulated data}
 Two diffrent classes of the simulated data have been constructed,
 The set of two groups, statistically identical, is represented by the curves 
