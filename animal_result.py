@@ -1,8 +1,9 @@
 from dataclasses import dataclass
-
+from plotSigmoid import SigmoidFitter
 from numpy.random import normal
 from scipy.interpolate import interp1d
 from scipy.stats import expon
+import numpy as np
 
 _distortion_standard_deviations = [
     0.054885048194197456,
@@ -54,6 +55,26 @@ class AnimalResult:
             animal_id=self.animal_id,
             responses=[
                 factor * r + normal(scale=_distortion_standard_deviations[i])
+                for i, r in enumerate(self.responses)
+            ],
+            group_id=self.group_id,
+        )
+
+    def distort1(self,keep_differences=False):
+        if keep_differences&(self.group_id=="1"):
+            offset=10
+        else:
+            offset=0
+        #print (offset,self.group_id,self.group_id=="1")
+        currents=[0.0, 25.0, 50.0, 75.0, 100.0, 125.0, 150.0, 175.0, 200.0, 225.0, 250.0, 275.0, 300.0]
+        factor = expon.rvs(loc=0.12757045614297235, scale=0.8724295438570279)
+        p0 = [ 1+normal(scale=0.2) , 140+normal(scale=20)+offset, 0.1+normal(scale=0.02) ,normal(scale=0.1)]
+        sigmoid_fitter = SigmoidFitter(currents,[])
+        sg= sigmoid_fitter.sigmoid(np.array(currents),*p0)
+        return AnimalResult(
+            animal_id=self.animal_id,
+            responses=[
+                sg[i]
                 for i, r in enumerate(self.responses)
             ],
             group_id=self.group_id,
