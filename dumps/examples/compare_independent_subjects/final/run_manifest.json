@@ -1,0 +1,23 @@
+{
+  "spec": {
+    "workflow": "subject_comparison",
+    "input_sha256": "966d148687ecff1081a778fc4b97c1a5dfafd735dd1d46cd3a4c04187e696dae",
+    "shared_code_sha256": "a9b6720e05014a1886f571895f84e9cee23f64c08074bda8071f0ae18afca89d",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "groups": [
+      "ANH",
+      "RES"
+    ],
+    "design": "independent",
+    "permutations": 9999,
+    "seed": 20260919,
+    "alpha": 0.05,
+    "exact": "auto",
+    "exact_limit": 50000,
+    "require_omnibus": true
+  },
+  "data_path": "/mnt/data/InOutCurves_clean/input_data/stress_response_ca1.csv",
+  "figure_directory": "/mnt/data/InOutCurves_clean/figures/examples/compare_independent_subjects/final",
+  "mode": "final"
+}

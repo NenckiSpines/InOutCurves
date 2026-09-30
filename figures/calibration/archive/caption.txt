@@ -1,0 +1,1 @@
+Descriptive calibration checks. The gain histogram is based on deviations from condition-specific means. The overlay and residual standard deviations show the selected generation model. In archive mode these parameters are historical pooled-template estimates, not a new fit to the displayed within-condition gains. No model-selection ranking or goodness-of-fit p-value is claimed.

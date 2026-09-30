@@ -1,0 +1,62 @@
+NOTEBOOK POSTER FIGURES: METHODS AND CACHE NOTES
+
+Figure mapping: notebook cells 3 -> figure 1; 5 -> figure 2; 7 -> figure 3;
+9 -> figure 4. The panel order and geometry are retained. Plot styling follows
+analysis/poster_validation_suite.py. The workflow uses shared subject-level modules in scripts/.
+See examples/ for the separate, ID-matched paired and independent multi-group workflows.
+
+This execution: mode=test; regenerate=True; seed=20260919.
+Requested figures: [2]. Cache directory: C:\TEMP\InOutCurves_clean\dumps\notebook\test.
+Generation settings (DO NOT attribute these to legacy pickle runs):
+  B=199 permutations per NEW simulation test;
+  R=30 NEW experiments per null/alternative scenario;
+  n=6 artificial subjects/group; m=3 recordings/subject;
+  Figure 2 histogram B=50000; precision B=[49, 199, 999];
+  precision re-estimates per B=20.
+
+Reuse precedence: compatible managed cache only; --legacy-pickles explicitly selects the old pair.
+Uncached small pieces are computed on first use and then persisted. Missing
+simulation p-value pickles never silently launch the large simulation.
+--regenerate replaces only this script's own managed caches. A normal rerun resumes
+any matching partial simulation cache. Settings/source mismatches stop with an
+explanation. DPI, formats, labels, font scaling and output folder are plot-only.
+Old scripts, CSVs, notebook, original dump pickles and previous poster files are
+not edited. Do not run two writers against one cache directory.
+
+Legacy p-values may include zeros and use an older convention. No mathematical
+repair is possible from the lists alone without the original test counts and
+statistics. This script preserves them, displays zeros explicitly, and exports
+all raw values. A legacy histogram is not validated simply because it is redrawn
+at high resolution or because --mode final was selected.
+
+Fresh real-data and simulation tests: squared L2 of piecewise-linear mean curves;
+subject-level reassignment; ties included. MC p=(1+count)/(B+1), exact p=count/all.
+Figure 2 holds the biological data FIXED and always uses MC for its precision
+experiment, even if a full exact reference is available. No significance statement
+is made about the one surrogate example in figure 1.
+
+Fresh simulations retain the ARCHIVE population model: separate recording-
+weighted templates under H1, one pooled template under H0, common shifted-
+exponential gains and independent Gaussian residuals with stimulus-specific SDs.
+Three independently distorted recordings per artificial subject are averaged by
+default. This reduces their variance and is not a subject-shared random effect.
+This differs from the corrected within-group calibration in analysis/poster_validation_suite.py.
+Do not mix results from the two population models without identifying them.
+
+The null groups are independent samples from the same distribution, not duplicated
+curves. Source PRE/POST curves are templates; these are independent synthetic-group
+experiments, not validated paired-design analyses. ANH/RES labels are kept as given;
+no control designation is invented for the CA1 example. Actual response units and
+the biological meaning of subject IDs must be confirmed from acquisition metadata.
+
+The number of permutations is not the number of experiments or the number of
+subjects. Low-R test runs are only execution checks. Exact tests have finite
+p-value resolution; increasing requested B beyond the complete allocation space
+does not create new distinct assignments. Pointwise binomial intervals quantify
+simulation error conditional on the fixed model, not uncertainty in source templates.
+
+Reproducibility sources: run_manifest.json; exported figure-specific CSV files;
+managed primitive-numeric pickles; source and cache SHA-256 hashes. No caches are
+silently relabeled with modern parameters. Use only trusted pickles; the reader
+rejects arbitrary Python object globals. All script settings and core equations
+are documented in the source docstrings.

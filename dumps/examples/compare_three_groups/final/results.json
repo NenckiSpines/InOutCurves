@@ -1,0 +1,138 @@
+{
+  "groups": [
+    "CTR",
+    "ANH",
+    "RES"
+  ],
+  "design": "independent",
+  "subject_ids": [
+    [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    [
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    [
+      "101",
+      "102",
+      "103",
+      "104",
+      "105"
+    ]
+  ],
+  "subject_counts": [
+    6,
+    6,
+    5
+  ],
+  "recording_counts": [
+    15,
+    20,
+    15
+  ],
+  "statistic_definition": "sum over i<j of integral (mean_i-mean_j)^2 dx",
+  "omnibus": {
+    "statistic": 42.16430815992985,
+    "pvalue": 0.2159,
+    "design": "independent",
+    "method": "monte_carlo",
+    "requested_permutations": 9999,
+    "evaluated_permutations": 9999,
+    "total_allocations": 5717712,
+    "group_sizes": [
+      6,
+      6,
+      5
+    ]
+  },
+  "alpha": 0.05,
+  "omnibus_reject": false,
+  "posthoc": [
+    {
+      "group_1": "CTR",
+      "group_2": "ANH",
+      "n_1": 6,
+      "n_2": 6,
+      "l2_squared": 5.450856324306246,
+      "p_raw": 0.5,
+      "method": "exact",
+      "allocations_evaluated": 924,
+      "p_holm": 0.5,
+      "reject_holm": false,
+      "omnibus_gate_passed": false,
+      "reject_after_gate": false,
+      "alpha": 0.05,
+      "family_size": 3,
+      "adjustment": "Holm"
+    },
+    {
+      "group_1": "CTR",
+      "group_2": "RES",
+      "n_1": 6,
+      "n_2": 5,
+      "l2_squared": 27.41437734498346,
+      "p_raw": 0.10173160173160173,
+      "method": "exact",
+      "allocations_evaluated": 462,
+      "p_holm": 0.3051948051948052,
+      "reject_holm": false,
+      "omnibus_gate_passed": false,
+      "reject_after_gate": false,
+      "alpha": 0.05,
+      "family_size": 3,
+      "adjustment": "Holm"
+    },
+    {
+      "group_1": "ANH",
+      "group_2": "RES",
+      "n_1": 6,
+      "n_2": 5,
+      "l2_squared": 9.299074490640145,
+      "p_raw": 0.23160173160173161,
+      "method": "exact",
+      "allocations_evaluated": 462,
+      "p_holm": 0.46320346320346323,
+      "reject_holm": false,
+      "omnibus_gate_passed": false,
+      "reject_after_gate": false,
+      "alpha": 0.05,
+      "family_size": 3,
+      "adjustment": "Holm"
+    }
+  ],
+  "pairwise_distances": [
+    {
+      "group_1": "CTR",
+      "group_2": "ANH",
+      "l2_squared": 5.450856324306243
+    },
+    {
+      "group_1": "CTR",
+      "group_2": "RES",
+      "l2_squared": 27.414377344983453
+    },
+    {
+      "group_1": "ANH",
+      "group_2": "RES",
+      "l2_squared": 9.299074490640145
+    }
+  ],
+  "require_omnibus": true,
+  "anova_comparator": {
+    "name": "Mixed-design ANOVA Group main effect",
+    "f_value": 1.6160393529115626,
+    "pvalue": 0.2336321270101285
+  },
+  "assumption": "Exchangeability of complete subject curves across groups under the null.",
+  "units": "Response units squared multiplied by stimulus units; no response-unit assumption made."
+}

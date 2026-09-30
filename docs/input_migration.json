@@ -1,0 +1,51 @@
+[
+  {
+    "original_file": "LTP5_slope.csv",
+    "clean_file": "input_data/ltp_paired.csv",
+    "original_sha256": "411377b1cbb3fde2d4b819f9a02a0b704b1e25d90a10af6a1480aa3b7b908909",
+    "clean_sha256": "dec894d76eb1a74220fe0a1b948ff0014ec7bff0928380479cc61e465be4c182",
+    "changes": "Identifier header renamed to SUBJECT; group header standardized; line endings standardized. All row values, IDs and response signs preserved."
+  },
+  {
+    "original_file": "LTP5_slope_diffsubjects.csv",
+    "clean_file": "input_data/ltp_templates_legacy_ids.csv",
+    "original_sha256": "115cc542f47353ebb7eef1feca3de877878c79db1eed925f183f27fcb4c07652",
+    "clean_sha256": "464283ad1e712823f9d9906430779526a5bce2adef53b2abdf92a1ee11db827d",
+    "changes": "Identifier header renamed to SUBJECT; group header standardized; line endings standardized. All row values, IDs and response signs preserved."
+  },
+  {
+    "original_file": "artificial_data.csv",
+    "clean_file": "input_data/legacy_artificial_curves.csv",
+    "original_sha256": "63c4768740cb265d30fd7559aa1a233a1e00a9e085221dfdda51734a036f331d",
+    "clean_sha256": "2a7cbffda969235e36cd30659301f91f50c9fa68f2e4469ba4074e6b570dbca5",
+    "changes": "Identifier header renamed to SUBJECT; group header standardized; line endings standardized. All row values, IDs and response signs preserved."
+  },
+  {
+    "original_file": "data/fepsp_ca1.csv",
+    "clean_file": "input_data/stress_response_ca1.csv",
+    "original_sha256": "e2ef07f3a961cd8b7836bd17f2e1c68f7dccc8361aa2af13c1928ffb11fbc449",
+    "clean_sha256": "966d148687ecff1081a778fc4b97c1a5dfafd735dd1d46cd3a4c04187e696dae",
+    "changes": "Identifier header renamed to SUBJECT; group header standardized; line endings standardized. All row values, IDs and response signs preserved."
+  },
+  {
+    "original_file": "data/fepsp_amplitude.csv",
+    "clean_file": "input_data/ltp_fepsp_amplitude.csv",
+    "original_sha256": "6995da179683c1b91325881f2561618685c3c13125dfe6ae01d1807d349612ad",
+    "clean_sha256": "6799b6215bcde645f3cab1b0c09b1a9d72608f62e82735a8e13a5883d770c807",
+    "changes": "Identifier header renamed to SUBJECT; group header standardized; line endings standardized. All row values, IDs and response signs preserved."
+  },
+  {
+    "original_file": "data/fepsp_slope.csv",
+    "clean_file": "input_data/ltp_fepsp_slope.csv",
+    "original_sha256": "8406a3491cbaafd1e52f1709410010d3bf9a1f9fdf432ed2053f58db317c0957",
+    "clean_sha256": "d9c40e30b6324c7e9e51ff572680155f8c93ccb1dcfb79fa7f34b4f9ea2f5783",
+    "changes": "Identifier header renamed to SUBJECT; group header standardized; line endings standardized. All row values, IDs and response signs preserved."
+  },
+  {
+    "original_file": "data/fv_amplitude.csv",
+    "clean_file": "input_data/ltp_fiber_volley_amplitude.csv",
+    "original_sha256": "e1cb2ccfee353a82d3344cadf624f69d7fdf244046480f7e7b5429f76c27c8df",
+    "clean_sha256": "d663ee041f2d6d583631a2dc260b71356fdcf583962b399aca9af4e4ac3e8441",
+    "changes": "Identifier header renamed to SUBJECT; group header standardized; line endings standardized. All row values, IDs and response signs preserved."
+  }
+]

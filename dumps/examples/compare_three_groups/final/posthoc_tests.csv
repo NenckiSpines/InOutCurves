@@ -1,0 +1,4 @@
+group_1,group_2,n_1,n_2,l2_squared,p_raw,method,allocations_evaluated,p_holm,reject_holm,omnibus_gate_passed,reject_after_gate,alpha,family_size,adjustment
+CTR,ANH,6,6,5.450856324306246,0.5,exact,924,0.5,False,False,False,0.05,3,Holm
+CTR,RES,6,5,27.41437734498346,0.10173160173160173,exact,462,0.3051948051948052,False,False,False,0.05,3,Holm
+ANH,RES,6,5,9.299074490640145,0.23160173160173161,exact,462,0.46320346320346323,False,False,False,0.05,3,Holm

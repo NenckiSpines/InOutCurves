@@ -1,0 +1,7 @@
+n,scenario,experiments,alpha,both,l2_only,anova_only,neither
+5,null,30,0.05,0,0,0,30
+5,alternative,30,0.05,9,2,2,17
+10,null,30,0.05,1,0,0,29
+10,alternative,30,0.05,18,0,1,11
+20,null,30,0.05,0,0,0,30
+20,alternative,30,0.05,29,0,1,0

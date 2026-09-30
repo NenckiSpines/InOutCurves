@@ -1,0 +1,43 @@
+{
+  "description": "Within-condition calibration: pooled within-group gain/residual variability; one generated curve per independent simulated subject.",
+  "source_group_labels": [
+    "PRE",
+    "POST"
+  ],
+  "source_subject_counts": [
+    24,
+    24
+  ],
+  "source_recording_counts": [
+    24,
+    24
+  ],
+  "ignored_source_groups": [],
+  "shared_source_identifiers": 24,
+  "design": "independent synthetic subjects; not a paired-data analysis",
+  "gain_location": 0.18529565918152197,
+  "gain_scale": 0.814704340818478,
+  "gain_mean": 1.0,
+  "noise_sd": [
+    0.05457844670211006,
+    0.05755380032631258,
+    0.1088891407425737,
+    0.12923644540982726,
+    0.12072199183282571,
+    0.09159659441484302,
+    0.07065456434866123,
+    0.04710667302848417,
+    0.04200918402197714,
+    0.04710103489070925,
+    0.07047165852496519,
+    0.08439450285150564,
+    0.09953782310884081
+  ],
+  "recordings_per_simulated_subject": 1,
+  "source_parameters": {
+    "gain_fit": "shifted exponential MLE, normalized to mean one",
+    "residual_sd_ddof": 1,
+    "residual_detrending": "none",
+    "deviations": "each subject relative to its own condition template"
+  }
+}

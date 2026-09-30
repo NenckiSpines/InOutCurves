@@ -1,0 +1,199 @@
+{
+  "uploaded_reference_sha256": "3fdc87f82ab99f7c821015b389040f5f404210e494d51a4a7819bc5fd6617c6a",
+  "regression_cases": [
+    {
+      "model": "within-group",
+      "scenario": "null",
+      "seed": 0,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "within-group",
+      "scenario": "null",
+      "seed": 0,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    },
+    {
+      "model": "within-group",
+      "scenario": "null",
+      "seed": 12,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "within-group",
+      "scenario": "null",
+      "seed": 12,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    },
+    {
+      "model": "within-group",
+      "scenario": "null",
+      "seed": 912,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "within-group",
+      "scenario": "null",
+      "seed": 912,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    },
+    {
+      "model": "within-group",
+      "scenario": "alternative",
+      "seed": 0,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "within-group",
+      "scenario": "alternative",
+      "seed": 0,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    },
+    {
+      "model": "within-group",
+      "scenario": "alternative",
+      "seed": 12,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "within-group",
+      "scenario": "alternative",
+      "seed": 12,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    },
+    {
+      "model": "within-group",
+      "scenario": "alternative",
+      "seed": 912,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "within-group",
+      "scenario": "alternative",
+      "seed": 912,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "null",
+      "seed": 0,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "null",
+      "seed": 0,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "null",
+      "seed": 12,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "null",
+      "seed": 12,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "null",
+      "seed": 912,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "null",
+      "seed": 912,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "alternative",
+      "seed": 0,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "alternative",
+      "seed": 0,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "alternative",
+      "seed": 12,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "alternative",
+      "seed": 12,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "alternative",
+      "seed": 912,
+      "permutations": 199,
+      "mode": "monte_carlo",
+      "matched": true
+    },
+    {
+      "model": "archive",
+      "scenario": "alternative",
+      "seed": 912,
+      "permutations": 9999,
+      "mode": "exact",
+      "matched": true
+    }
+  ],
+  "holm_random_crosschecks_against_statsmodels": 40,
+  "summary": "Simulation parameters, seeded synthetic datasets, distance statistics, exact/MC p-values and allocation counts match the supplied poster engine within stated floating point tolerances."
+}

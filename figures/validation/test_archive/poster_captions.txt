@@ -1,0 +1,7 @@
+TEST / LOW-PRECISION OUTPUT: intended to check execution and figure layout, not to support scientific claims.
+
+Figure 1. Simulation design. (A) Experimental control (PRE) and LTP (POST) curves. (B) An alternative experiment generated around separate control/LTP templates. (C) A null experiment generated from one common template and variability model, with independent draws. Examples use n=10 per group. Thin lines: individual curves; solid lines: sample means; dashed lines: generating templates. The archive model averages three independently generated recordings per subject.
+
+Figure 2. Power and false-positive control versus sample size. (A) Rejection rates under the control-LTP alternative. (B) Rejection rates under the common-population null. Both methods analyze the same R=30 experiments per scenario and n; alpha=0.05. Error bars/shading: pointwise exact 95% binomial intervals. The permutation test uses B=199 allocations or exact enumeration when cheaper. ANOVA denotes the Group main effect. Reference lines mark 80% power and nominal alpha.
+
+Figure 3. Method agreement. Each point is one experiment analyzed by both tests at prespecified n=10; R=30 per scenario. (A) Null. (B) Control-LTP alternative. Axes are logarithmic. The dotted line indicates equal p-values; dashed lines mark alpha=0.05. Counts summarize joint and method-specific rejections. All experiments are included. Interpret disagreement alongside power and false-positive control.

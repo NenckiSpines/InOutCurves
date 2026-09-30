@@ -1,0 +1,86 @@
+TEST / LOW-PRECISION OUTPUT: intended to check execution and figure layout, not to support scientific claims.
+
+METHODS SUBSECTION
+Empirically Calibrated Simulations for Sample-Size-Dependent Method Comparison
+
+Within-condition calibration: pooled within-group gain/residual variability; one generated curve per independent simulated subject.
+Variability was calibrated from each source subject's deviations from its own condition-specific mean, then pooled across conditions. Each simulated subject contributed one generated curve.
+
+At stimulation x_k, an individual generated recording is
+    Y_gi(x_k) = A_gi * mu_g(x_k) + epsilon_gik.
+A = location + Exponential(scale), with location=0.1852956592,
+scale=0.8147043408, and mean=1.
+The same gain distribution and stimulus-specific noise SDs are used in both groups.
+Noise is Gaussian and independent across stimulation points, conditional on gain.
+The gain induces a shared multiplicative component within each curve. The model
+does not reproduce every empirical residual correlation or gain-residual dependence.
+No outliers are removed, no sign inversion or clipping is applied, and no cubic
+residual detrending is used in this new script.
+
+Under H1, mu_g is the group's experimental template. Under H0, both groups use
+one pooled template and identical variability distributions, with independent draws.
+The original data may be paired; they supply templates here. The power experiment
+itself concerns INDEPENDENT groups. n means independent simulated experimental
+units, not stimulation points, repeated recordings, or necessarily literal subjects.
+
+SETTINGS
+n per group: [5, 10, 20]
+R independent experiments per scenario per n: 30
+B random allocations within one test: 199
+Alpha: 0.05
+Random seed: 20260919
+Generated recordings averaged per subject: 1
+Monte Carlo sampling was used at all evaluated sample sizes.
+
+STATISTICS
+T = integral [mean_control(x) - mean_LTP(x)]^2 dx.
+For each interval of width h, with endpoint differences d0 and d1,
+the exact contribution for linear interpolants is h*(d0^2+d0*d1+d1^2)/3.
+This is the SQUARED L2 distance; there is no square root. Complete subject-level
+curves are exchanged between groups, preserving group sizes and within-curve data.
+Monte Carlo p = (1 + count(T_perm >= T_observed))/(B+1). Exact tests use the
+inclusive tail count / total allocations, including the observed allocation.
+A relative tolerance of 100 machine epsilons handles floating-point ties.
+The nondirectional distance uses its upper tail; its p-value is not doubled.
+
+The ANOVA comparator matches the Group main effect from scripts/reference_tests.py.
+With k complete repeated stimulation levels, both SS_Group and SS_Subject(Group)
+contain a factor k, which cancels in F. Thus it is computed as the equal-variance
+one-way F test of subject-wise arithmetic means across stimulation points.
+Stimulation points are not treated as independent biological observations.
+This is NOT a Group x Stimulation test or a combined curve-equality omnibus test.
+
+Power = number of H1 p-values <= alpha / R.
+False-positive rate = number of H0 p-values <= alpha / R.
+False-negative rate = 1 - power.
+Pointwise 95% exact Clopper-Pearson binomial intervals accompany the rates.
+Monte Carlo standard errors are also saved in summary_rates.csv. For zero/complete
+rejection the plug-in MCSE is zero; the nonzero-width exact interval remains the
+appropriate uncertainty display. Both tests share each experiment's generated data.
+
+RESULTS SUBSECTION
+Sample-Size Dependence of Statistical Power and Type I Error
+
+INTERPRETATION
+Compare detection rates together with false-positive control. A larger rejection
+rate is not automatically better. The comparison is conditional on this particular
+control-LTP difference, variability model and independent-group design. The original
+mean curves/variability are estimated, but template-estimation uncertainty is not
+included in these intervals. Sample-size curves do not give universal n requirements.
+Nonparametric does not mean assumption-free: null exchangeability is required.
+Do not infer general outlier robustness, paired-design validity, patch-clamp
+validation, or universal superiority from these figures.
+
+REPRODUCIBILITY
+The benchmark does not read historical p-value caches or call
+its old get_p_value function. All results are newly generated or resumed from this
+script's own fingerprint-matched raw_results.csv. Seeds, checksums, versions and
+parameters are in run_manifest.json. Figure 1 uses separate fixed random streams.
+Figure 3 includes every experiment at prespecified n=10; no significance-based
+selection. Explicit units must be supplied after checking the experimental metadata.
+
+REFERENCES
+Phipson B, Smyth GK (2010). DOI: 10.2202/1544-6115.1585.
+Morris TP, White IR, Crowther MJ (2019). DOI: 10.1002/sim.8086.
+SciPy permutation_test documentation; Pingouin mixed_anova documentation.
+See the script docstring for the official documentation URLs.

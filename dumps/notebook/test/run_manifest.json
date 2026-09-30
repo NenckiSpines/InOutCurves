@@ -1,0 +1,84 @@
+{
+  "created_utc": "2026-09-30T11:24:02.483585+00:00",
+  "script_sha256": "8b6d7c8df7de22ae913e35b733aaf652cbaf4b03fcbaa459bd9db3cb19f43bef",
+  "engine": "2.0.0-clean",
+  "python": "3.13.9",
+  "numpy": "2.3.5",
+  "scipy": "1.16.3",
+  "matplotlib": "3.10.6",
+  "settings": {
+    "project": "C:\\TEMP\\InOutCurves_clean",
+    "experimental_data": "C:\\TEMP\\InOutCurves_clean\\input_data\\stress_response_ca1.csv",
+    "simulation_data": "C:\\TEMP\\InOutCurves_clean\\input_data\\ltp_paired.csv",
+    "experimental_groups": [
+      "ANH",
+      "RES"
+    ],
+    "simulation_groups": [
+      "PRE",
+      "POST"
+    ],
+    "mode": "test",
+    "regenerate": true,
+    "legacy_pickles": false,
+    "cache_dir": "C:\\TEMP\\InOutCurves_clean\\dumps\\notebook\\test",
+    "out": "C:\\TEMP\\InOutCurves_clean\\figures\\notebook\\test",
+    "figures": [
+      2
+    ],
+    "permutations": 199,
+    "experiments": 30,
+    "histogram_permutations": 50000,
+    "stability_counts": [
+      49,
+      199,
+      999
+    ],
+    "stability_repeats": 20,
+    "subjects": 6,
+    "recordings": 3,
+    "seed": 20260919,
+    "formats": [
+      "png",
+      "pdf",
+      "svg"
+    ],
+    "dpi": 160,
+    "font_scale": 1.0,
+    "experimental_response_label": "Response (source units)",
+    "simulation_response_label": "fEPSP slope (source units)",
+    "stimulation_label": "Stimulation current (\u00b5A)",
+    "self_test": false
+  },
+  "provenance": {
+    "experimental_data": {
+      "path": "C:\\TEMP\\InOutCurves_clean\\input_data\\stress_response_ca1.csv",
+      "sha256": "966d148687ecff1081a778fc4b97c1a5dfafd735dd1d46cd3a4c04187e696dae",
+      "groups": [
+        "ANH",
+        "RES"
+      ],
+      "n": [
+        6,
+        5
+      ]
+    },
+    "inference": {
+      "exact_p": 0.23160173160173161,
+      "p_mc": 0.23199536009279814,
+      "statistic": 9.299074490640145,
+      "created_utc": "2026-09-30T11:24:01.639991+00:00"
+    }
+  },
+  "cache_hashes": {
+    "experimental_example.pkl": "d9455f713a30d3f4c554d3972864bfcb63457145c6fc139fe7826a87bca04ad8",
+    "permutation_inference.pkl": "7901ad2fbc1a941a2e871c6456dd9d47122d566c7f30e1efd8bebf525ced1fcb",
+    "simulation_examples.pkl": "a532c30b1040915d1a095bb13f02469ee76662d0f12a54c1e5f356f2297633fe",
+    "simulation_pvalues.pkl": "f439a2200e8687389ca52c03ff0536dc319e0c01088ae4d4ebea8a4264ab121e"
+  },
+  "figure_files": [
+    "poster_permutation_precision.png",
+    "poster_permutation_precision.pdf",
+    "poster_permutation_precision.svg"
+  ]
+}

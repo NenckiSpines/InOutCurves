@@ -1,0 +1,101 @@
+{
+  "groups": [
+    "PRE",
+    "POST"
+  ],
+  "design": "paired",
+  "subject_ids": [
+    [
+      "1",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "2",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    [
+      "1",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "2",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  ],
+  "subject_counts": [
+    24,
+    24
+  ],
+  "recording_counts": [
+    24,
+    24
+  ],
+  "statistic_definition": "integral (mean_1-mean_2)^2 dx",
+  "omnibus": {
+    "statistic": 22.29802721064228,
+    "pvalue": 0.0001,
+    "design": "paired",
+    "method": "monte_carlo",
+    "requested_permutations": 9999,
+    "evaluated_permutations": 9999,
+    "total_allocations": 16777216,
+    "group_sizes": [
+      24,
+      24
+    ]
+  },
+  "alpha": 0.05,
+  "omnibus_reject": true,
+  "posthoc": [],
+  "pairwise_distances": [
+    {
+      "group_1": "PRE",
+      "group_2": "POST",
+      "l2_squared": 22.298027210642275
+    }
+  ],
+  "require_omnibus": true,
+  "anova_comparator": {
+    "name": "Repeated-measures Condition main effect (paired mean-response t squared)",
+    "f_value": 24.16369494209139,
+    "pvalue": 5.7500191319384646e-05
+  },
+  "assumption": "Within-subject exchangeability of the two condition labels; independent subjects.",
+  "units": "Response units squared multiplied by stimulus units; no response-unit assumption made."
+}

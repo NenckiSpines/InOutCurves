@@ -1,0 +1,53 @@
+{
+  "workflow": "poster_validation",
+  "fingerprint": "6838fe27502ca5a08ffac2640c6e18e81e00ac7e7d1fd0870212ee66e6db81e0",
+  "identity": {
+    "engine_version": "2.0.0-clean",
+    "script_sha256": "bb0ba21898a4a666af210ca2d7224451cc50131a9eb99d6b2083818178410dcb",
+    "shared_code_sha256": "a9b6720e05014a1886f571895f84e9cee23f64c08074bda8071f0ae18afca89d",
+    "source_sha256": "dec894d76eb1a74220fe0a1b948ff0014ec7bff0928380479cc61e465be4c182",
+    "config": {
+      "mode": "test",
+      "model": "within-group",
+      "permutations": 199,
+      "experiments": 30,
+      "sample_sizes": [
+        5,
+        10,
+        20
+      ],
+      "representative_n": 10,
+      "alpha": 0.05,
+      "seed": 20260919,
+      "exact_limit": 50000,
+      "control_group": "PRE",
+      "ltp_group": "POST"
+    },
+    "model_parameters": {
+      "gain_fit": "shifted exponential MLE, normalized to mean one",
+      "residual_sd_ddof": 1,
+      "residual_detrending": "none",
+      "deviations": "each subject relative to its own condition template"
+    },
+    "numpy_version": "2.3.5",
+    "scipy_version": "1.17.0"
+  },
+  "created_utc": "2026-09-28T20:07:34.026356+00:00",
+  "source_file": "/mnt/data/InOutCurves_clean/input_data/ltp_paired.csv",
+  "project_directory": "/mnt/data/InOutCurves_clean",
+  "python_version": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "matplotlib_version": "3.10.8",
+  "complete": true,
+  "last_completed_utc": "2026-09-28T20:09:12.658758+00:00",
+  "completed_experiments": 180,
+  "last_plot_settings": {
+    "dpi": 160,
+    "formats": [
+      "png"
+    ],
+    "response_label": "fEPSP slope (source units)",
+    "stimulation_label": "Stimulation current (\u00b5A)"
+  },
+  "last_jobs": 1
+}

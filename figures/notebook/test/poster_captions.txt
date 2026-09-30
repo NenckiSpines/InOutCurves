@@ -1,0 +1,2 @@
+Figure 2. Permutation inference and numerical precision
+Permutation-based inference. (A) Squared-L2 distances after random reassignment of complete subject curves; the vertical line marks the original-group statistic. (B) Repeated p-value estimates at different permutation counts B show Monte Carlo variability on the same experimental dataset.

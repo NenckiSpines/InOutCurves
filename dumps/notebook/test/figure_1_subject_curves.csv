@@ -1,0 +1,287 @@
+scenario,group,curve,stimulation,response
+original,ANH,1,0.0,-0.03479116533333334
+original,ANH,1,25.0,-0.33828178033333334
+original,ANH,1,50.0,-0.9372608063333333
+original,ANH,1,75.0,-1.1787397066666667
+original,ANH,1,100.0,-1.2891558806666665
+original,ANH,1,125.0,-1.2926692566666667
+original,ANH,1,150.0,-1.3175504603333335
+original,ANH,1,175.0,-1.2959281206666666
+original,ANH,1,200.0,-1.2766774896666668
+original,ANH,1,225.0,-1.261883259
+original,ANH,1,250.0,-1.2320719956666666
+original,ANH,1,275.0,-1.2069126366666667
+original,ANH,1,300.0,-1.183673779
+original,ANH,2,0.0,-0.036940947749999994
+original,ANH,2,25.0,-0.199996736
+original,ANH,2,50.0,-0.33430140475000003
+original,ANH,2,75.0,-0.39876338475
+original,ANH,2,100.0,-0.436250776
+original,ANH,2,125.0,-0.45669976625
+original,ANH,2,150.0,-0.4939409495
+original,ANH,2,175.0,-0.49873635925
+original,ANH,2,200.0,-0.51589775075
+original,ANH,2,225.0,-0.52316365375
+original,ANH,2,250.0,-0.5223878025
+original,ANH,2,275.0,-0.493939899
+original,ANH,2,300.0,-0.46816053225
+original,ANH,3,0.0,-0.0355072016
+original,ANH,3,25.0,-0.267496562
+original,ANH,3,50.0,-0.6429246008
+original,ANH,3,75.0,-0.8163341404000001
+original,ANH,3,100.0,-0.9109769224
+original,ANH,3,125.0,-0.9643935800000001
+original,ANH,3,150.0,-1.0311248661999999
+original,ANH,3,175.0,-1.0462718845999999
+original,ANH,3,200.0,-1.0863340855999999
+original,ANH,3,225.0,-1.1092702864
+original,ANH,3,250.0,-1.1221767662
+original,ANH,3,275.0,-1.1055223286
+original,ANH,3,300.0,-1.1194397866
+original,ANH,4,0.0,-0.040740967
+original,ANH,4,25.0,-0.2218607295
+original,ANH,4,50.0,-0.5614722965
+original,ANH,4,75.0,-0.7349122164999999
+original,ANH,4,100.0,-0.8521579205
+original,ANH,4,125.0,-0.9419894520000001
+original,ANH,4,150.0,-0.9960230290000001
+original,ANH,4,175.0,-1.0189020335
+original,ANH,4,200.0,-1.0618155895
+original,ANH,4,225.0,-1.0841301385
+original,ANH,4,250.0,-1.119121134
+original,ANH,4,275.0,-1.1353634595000002
+original,ANH,4,300.0,-1.149185181
+original,ANH,5,0.0,-0.04894310500000001
+original,ANH,5,25.0,-0.24527957033333334
+original,ANH,5,50.0,-0.6216052769999999
+original,ANH,5,75.0,-0.713824153
+original,ANH,5,100.0,-0.7360328833333334
+original,ANH,5,125.0,-0.7307590046666667
+original,ANH,5,150.0,-0.7484360536666667
+original,ANH,5,175.0,-0.7188486653333334
+original,ANH,5,200.0,-0.7006238499999999
+original,ANH,5,225.0,-0.686862687
+original,ANH,5,250.0,-0.623335004
+original,ANH,5,275.0,-0.6174722313333333
+original,ANH,5,300.0,-0.570630034
+original,ANH,6,0.0,-0.04153417433333333
+original,ANH,6,25.0,-0.37229992466666667
+original,ANH,6,50.0,-0.7527053356666666
+original,ANH,6,75.0,-0.973771433
+original,ANH,6,100.0,-1.042194724
+original,ANH,6,125.0,-1.1367745003333332
+original,ANH,6,150.0,-1.1648152173333333
+original,ANH,6,175.0,-1.2031719383333332
+original,ANH,6,200.0,-1.2373789946666667
+original,ANH,6,225.0,-1.2226344943333334
+original,ANH,6,250.0,-1.2337478696666666
+original,ANH,6,275.0,-1.23518007
+original,ANH,6,300.0,-1.229305039
+original,RES,1,0.0,-0.035632491
+original,RES,1,25.0,-0.25520178649999997
+original,RES,1,50.0,-0.638330117
+original,RES,1,75.0,-0.7004217505
+original,RES,1,100.0,-0.7102923839999999
+original,RES,1,125.0,-0.6946018935
+original,RES,1,150.0,-0.7146446559999999
+original,RES,1,175.0,-0.706484526
+original,RES,1,200.0,-0.712352693
+original,RES,1,225.0,-0.7085648625000001
+original,RES,1,250.0,-0.690549284
+original,RES,1,275.0,-0.6945248545
+original,RES,1,300.0,-0.694093436
+original,RES,2,0.0,-0.041518886500000005
+original,RES,2,25.0,-0.38183869425000005
+original,RES,2,50.0,-0.60961984475
+original,RES,2,75.0,-0.6710633075
+original,RES,2,100.0,-0.7726477384999999
+original,RES,2,125.0,-0.84834834175
+original,RES,2,150.0,-0.8820280952499999
+original,RES,2,175.0,-0.9169388187499999
+original,RES,2,200.0,-0.9228921979999999
+original,RES,2,225.0,-0.9517724142499999
+original,RES,2,250.0,-0.9406077340000001
+original,RES,2,275.0,-0.9445753619999999
+original,RES,2,300.0,-0.96316616975
+original,RES,3,0.0,-0.040775302666666666
+original,RES,3,25.0,-0.26830631266666666
+original,RES,3,50.0,-0.4728901136666666
+original,RES,3,75.0,-0.5568565233333334
+original,RES,3,100.0,-0.593340556
+original,RES,3,125.0,-0.6273630263333333
+original,RES,3,150.0,-0.6199766296666667
+original,RES,3,175.0,-0.6141097446666667
+original,RES,3,200.0,-0.621177683
+original,RES,3,225.0,-0.6268283226666668
+original,RES,3,250.0,-0.6132719416666667
+original,RES,3,275.0,-0.6142178776666666
+original,RES,3,300.0,-0.5896865526666667
+original,RES,4,0.0,-0.021025224
+original,RES,4,25.0,-0.33478915699999995
+original,RES,4,50.0,-0.6576664746666667
+original,RES,4,75.0,-0.7691469889999999
+original,RES,4,100.0,-0.8467512623333334
+original,RES,4,125.0,-0.9021992683333334
+original,RES,4,150.0,-0.9488191803333333
+original,RES,4,175.0,-0.9746384616666668
+original,RES,4,200.0,-1.0112046203333331
+original,RES,4,225.0,-1.04481856
+original,RES,4,250.0,-1.0479476250000002
+original,RES,4,275.0,-1.0763931673333333
+original,RES,4,300.0,-1.0617931883333334
+original,RES,5,0.0,-0.020219902666666668
+original,RES,5,25.0,-0.22345401833333334
+original,RES,5,50.0,-0.38334349800000006
+original,RES,5,75.0,-0.4413378436666667
+original,RES,5,100.0,-0.503689031
+original,RES,5,125.0,-0.5235757033333334
+original,RES,5,150.0,-0.5561933419999999
+original,RES,5,175.0,-0.5659639236666667
+original,RES,5,200.0,-0.5858457686666667
+original,RES,5,225.0,-0.5850860276666667
+original,RES,5,250.0,-0.604032437
+original,RES,5,275.0,-0.5984490316666666
+original,RES,5,300.0,-0.5680591363333334
+reassigned,Surrogate group 1,1,0.0,-0.04153417433333333
+reassigned,Surrogate group 1,1,25.0,-0.37229992466666667
+reassigned,Surrogate group 1,1,50.0,-0.7527053356666666
+reassigned,Surrogate group 1,1,75.0,-0.973771433
+reassigned,Surrogate group 1,1,100.0,-1.042194724
+reassigned,Surrogate group 1,1,125.0,-1.1367745003333332
+reassigned,Surrogate group 1,1,150.0,-1.1648152173333333
+reassigned,Surrogate group 1,1,175.0,-1.2031719383333332
+reassigned,Surrogate group 1,1,200.0,-1.2373789946666667
+reassigned,Surrogate group 1,1,225.0,-1.2226344943333334
+reassigned,Surrogate group 1,1,250.0,-1.2337478696666666
+reassigned,Surrogate group 1,1,275.0,-1.23518007
+reassigned,Surrogate group 1,1,300.0,-1.229305039
+reassigned,Surrogate group 1,2,0.0,-0.0355072016
+reassigned,Surrogate group 1,2,25.0,-0.267496562
+reassigned,Surrogate group 1,2,50.0,-0.6429246008
+reassigned,Surrogate group 1,2,75.0,-0.8163341404000001
+reassigned,Surrogate group 1,2,100.0,-0.9109769224
+reassigned,Surrogate group 1,2,125.0,-0.9643935800000001
+reassigned,Surrogate group 1,2,150.0,-1.0311248661999999
+reassigned,Surrogate group 1,2,175.0,-1.0462718845999999
+reassigned,Surrogate group 1,2,200.0,-1.0863340855999999
+reassigned,Surrogate group 1,2,225.0,-1.1092702864
+reassigned,Surrogate group 1,2,250.0,-1.1221767662
+reassigned,Surrogate group 1,2,275.0,-1.1055223286
+reassigned,Surrogate group 1,2,300.0,-1.1194397866
+reassigned,Surrogate group 1,3,0.0,-0.035632491
+reassigned,Surrogate group 1,3,25.0,-0.25520178649999997
+reassigned,Surrogate group 1,3,50.0,-0.638330117
+reassigned,Surrogate group 1,3,75.0,-0.7004217505
+reassigned,Surrogate group 1,3,100.0,-0.7102923839999999
+reassigned,Surrogate group 1,3,125.0,-0.6946018935
+reassigned,Surrogate group 1,3,150.0,-0.7146446559999999
+reassigned,Surrogate group 1,3,175.0,-0.706484526
+reassigned,Surrogate group 1,3,200.0,-0.712352693
+reassigned,Surrogate group 1,3,225.0,-0.7085648625000001
+reassigned,Surrogate group 1,3,250.0,-0.690549284
+reassigned,Surrogate group 1,3,275.0,-0.6945248545
+reassigned,Surrogate group 1,3,300.0,-0.694093436
+reassigned,Surrogate group 1,4,0.0,-0.020219902666666668
+reassigned,Surrogate group 1,4,25.0,-0.22345401833333334
+reassigned,Surrogate group 1,4,50.0,-0.38334349800000006
+reassigned,Surrogate group 1,4,75.0,-0.4413378436666667
+reassigned,Surrogate group 1,4,100.0,-0.503689031
+reassigned,Surrogate group 1,4,125.0,-0.5235757033333334
+reassigned,Surrogate group 1,4,150.0,-0.5561933419999999
+reassigned,Surrogate group 1,4,175.0,-0.5659639236666667
+reassigned,Surrogate group 1,4,200.0,-0.5858457686666667
+reassigned,Surrogate group 1,4,225.0,-0.5850860276666667
+reassigned,Surrogate group 1,4,250.0,-0.604032437
+reassigned,Surrogate group 1,4,275.0,-0.5984490316666666
+reassigned,Surrogate group 1,4,300.0,-0.5680591363333334
+reassigned,Surrogate group 1,5,0.0,-0.04894310500000001
+reassigned,Surrogate group 1,5,25.0,-0.24527957033333334
+reassigned,Surrogate group 1,5,50.0,-0.6216052769999999
+reassigned,Surrogate group 1,5,75.0,-0.713824153
+reassigned,Surrogate group 1,5,100.0,-0.7360328833333334
+reassigned,Surrogate group 1,5,125.0,-0.7307590046666667
+reassigned,Surrogate group 1,5,150.0,-0.7484360536666667
+reassigned,Surrogate group 1,5,175.0,-0.7188486653333334
+reassigned,Surrogate group 1,5,200.0,-0.7006238499999999
+reassigned,Surrogate group 1,5,225.0,-0.686862687
+reassigned,Surrogate group 1,5,250.0,-0.623335004
+reassigned,Surrogate group 1,5,275.0,-0.6174722313333333
+reassigned,Surrogate group 1,5,300.0,-0.570630034
+reassigned,Surrogate group 1,6,0.0,-0.041518886500000005
+reassigned,Surrogate group 1,6,25.0,-0.38183869425000005
+reassigned,Surrogate group 1,6,50.0,-0.60961984475
+reassigned,Surrogate group 1,6,75.0,-0.6710633075
+reassigned,Surrogate group 1,6,100.0,-0.7726477384999999
+reassigned,Surrogate group 1,6,125.0,-0.84834834175
+reassigned,Surrogate group 1,6,150.0,-0.8820280952499999
+reassigned,Surrogate group 1,6,175.0,-0.9169388187499999
+reassigned,Surrogate group 1,6,200.0,-0.9228921979999999
+reassigned,Surrogate group 1,6,225.0,-0.9517724142499999
+reassigned,Surrogate group 1,6,250.0,-0.9406077340000001
+reassigned,Surrogate group 1,6,275.0,-0.9445753619999999
+reassigned,Surrogate group 1,6,300.0,-0.96316616975
+reassigned,Surrogate group 2,1,0.0,-0.040775302666666666
+reassigned,Surrogate group 2,1,25.0,-0.26830631266666666
+reassigned,Surrogate group 2,1,50.0,-0.4728901136666666
+reassigned,Surrogate group 2,1,75.0,-0.5568565233333334
+reassigned,Surrogate group 2,1,100.0,-0.593340556
+reassigned,Surrogate group 2,1,125.0,-0.6273630263333333
+reassigned,Surrogate group 2,1,150.0,-0.6199766296666667
+reassigned,Surrogate group 2,1,175.0,-0.6141097446666667
+reassigned,Surrogate group 2,1,200.0,-0.621177683
+reassigned,Surrogate group 2,1,225.0,-0.6268283226666668
+reassigned,Surrogate group 2,1,250.0,-0.6132719416666667
+reassigned,Surrogate group 2,1,275.0,-0.6142178776666666
+reassigned,Surrogate group 2,1,300.0,-0.5896865526666667
+reassigned,Surrogate group 2,2,0.0,-0.021025224
+reassigned,Surrogate group 2,2,25.0,-0.33478915699999995
+reassigned,Surrogate group 2,2,50.0,-0.6576664746666667
+reassigned,Surrogate group 2,2,75.0,-0.7691469889999999
+reassigned,Surrogate group 2,2,100.0,-0.8467512623333334
+reassigned,Surrogate group 2,2,125.0,-0.9021992683333334
+reassigned,Surrogate group 2,2,150.0,-0.9488191803333333
+reassigned,Surrogate group 2,2,175.0,-0.9746384616666668
+reassigned,Surrogate group 2,2,200.0,-1.0112046203333331
+reassigned,Surrogate group 2,2,225.0,-1.04481856
+reassigned,Surrogate group 2,2,250.0,-1.0479476250000002
+reassigned,Surrogate group 2,2,275.0,-1.0763931673333333
+reassigned,Surrogate group 2,2,300.0,-1.0617931883333334
+reassigned,Surrogate group 2,3,0.0,-0.036940947749999994
+reassigned,Surrogate group 2,3,25.0,-0.199996736
+reassigned,Surrogate group 2,3,50.0,-0.33430140475000003
+reassigned,Surrogate group 2,3,75.0,-0.39876338475
+reassigned,Surrogate group 2,3,100.0,-0.436250776
+reassigned,Surrogate group 2,3,125.0,-0.45669976625
+reassigned,Surrogate group 2,3,150.0,-0.4939409495
+reassigned,Surrogate group 2,3,175.0,-0.49873635925
+reassigned,Surrogate group 2,3,200.0,-0.51589775075
+reassigned,Surrogate group 2,3,225.0,-0.52316365375
+reassigned,Surrogate group 2,3,250.0,-0.5223878025
+reassigned,Surrogate group 2,3,275.0,-0.493939899
+reassigned,Surrogate group 2,3,300.0,-0.46816053225
+reassigned,Surrogate group 2,4,0.0,-0.040740967
+reassigned,Surrogate group 2,4,25.0,-0.2218607295
+reassigned,Surrogate group 2,4,50.0,-0.5614722965
+reassigned,Surrogate group 2,4,75.0,-0.7349122164999999
+reassigned,Surrogate group 2,4,100.0,-0.8521579205
+reassigned,Surrogate group 2,4,125.0,-0.9419894520000001
+reassigned,Surrogate group 2,4,150.0,-0.9960230290000001
+reassigned,Surrogate group 2,4,175.0,-1.0189020335
+reassigned,Surrogate group 2,4,200.0,-1.0618155895
+reassigned,Surrogate group 2,4,225.0,-1.0841301385
+reassigned,Surrogate group 2,4,250.0,-1.119121134
+reassigned,Surrogate group 2,4,275.0,-1.1353634595000002
+reassigned,Surrogate group 2,4,300.0,-1.149185181
+reassigned,Surrogate group 2,5,0.0,-0.03479116533333334
+reassigned,Surrogate group 2,5,25.0,-0.33828178033333334
+reassigned,Surrogate group 2,5,50.0,-0.9372608063333333
+reassigned,Surrogate group 2,5,75.0,-1.1787397066666667
+reassigned,Surrogate group 2,5,100.0,-1.2891558806666665
+reassigned,Surrogate group 2,5,125.0,-1.2926692566666667
+reassigned,Surrogate group 2,5,150.0,-1.3175504603333335
+reassigned,Surrogate group 2,5,175.0,-1.2959281206666666
+reassigned,Surrogate group 2,5,200.0,-1.2766774896666668
+reassigned,Surrogate group 2,5,225.0,-1.261883259
+reassigned,Surrogate group 2,5,250.0,-1.2320719956666666
+reassigned,Surrogate group 2,5,275.0,-1.2069126366666667
+reassigned,Surrogate group 2,5,300.0,-1.183673779

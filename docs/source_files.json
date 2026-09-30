@@ -1,0 +1,62 @@
+[
+  {
+    "source_filename": "poster_figures(1).py",
+    "sha256": "3fdc87f82ab99f7c821015b389040f5f404210e494d51a4a7819bc5fd6617c6a"
+  },
+  {
+    "source_filename": "poster_notebook_figures(1).py",
+    "sha256": "aae604bdf7221c694293523f90e4f88cb57a006135da320e6d484d537f5275e2"
+  },
+  {
+    "source_filename": "animal_result.py",
+    "sha256": "34bf044d0f12481bbdbad866f4240ec4e167be8f24d87d421e9d7ca09227765b"
+  },
+  {
+    "source_filename": "animal_results.py",
+    "sha256": "2986ac7d01605fb0e12c4243e1a3321d246b4154bc40762ebe2268029d9a7c97"
+  },
+  {
+    "source_filename": "constants.py",
+    "sha256": "92827dc867c8c54b3e6b40eb46041b9cc28a23269a1c4bef701242457456b3bb"
+  },
+  {
+    "source_filename": "draw_hist.py",
+    "sha256": "5455a92836dec22d312345153adc89d3e7eb29f60d8387e5eb06c6f60bfba408"
+  },
+  {
+    "source_filename": "get_distributions.py",
+    "sha256": "8e74164f9cd86b61e60318a6829a56d157bda5fb935aa28751ad3ecc794fb24d"
+  },
+  {
+    "source_filename": "group_result.py",
+    "sha256": "b04837fdf3050bf155bf872218689f45896b1af8b64e2420f39cf0763929affe"
+  },
+  {
+    "source_filename": "group_results.py",
+    "sha256": "7f93fe4b76466c74c05413ab6c4e740e8ce601c1005a2430f72a3a79080e5fc0"
+  },
+  {
+    "source_filename": "plotSigmoid.py",
+    "sha256": "c39f35bbe522ec1d8a8e405d0cdfb65b13cadd163308460886cdbbb0a85cc2f3"
+  },
+  {
+    "source_filename": "rate_calc.py",
+    "sha256": "2a848f73edafe3c68a93589289a7a091ec33e83780c59c57d7666abc4f8fcd58"
+  },
+  {
+    "source_filename": "reference_tests.py",
+    "sha256": "b9af1006c84503237842a35c689000d81df932c420e515c2f2d7896253c04020"
+  },
+  {
+    "source_filename": "simulation_batch.py",
+    "sha256": "b9dbfdbaba12b6c088a562b578356343b02bab4946f1a6a444296903252781e0"
+  },
+  {
+    "source_filename": "utilities.py",
+    "sha256": "00b09a148416c00e827fcd9167e8058a27c04652b0c4128ab9599f82ea088017"
+  },
+  {
+    "source_filename": "InOutCurves-main.7z",
+    "sha256": "6f164e6205621bdafdaac4e2d52753c42dbbf52aecd5b2c59f432bd344ebec74"
+  }
+]

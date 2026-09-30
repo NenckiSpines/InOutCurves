@@ -1,0 +1,7 @@
+{
+  "representative_n": 10,
+  "log_plot_lower_floor": 0.001,
+  "clipped_values_for_display_only": 0,
+  "jitter": false,
+  "plotted_experiments": 60
+}

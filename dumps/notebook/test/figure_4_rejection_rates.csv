@@ -1,0 +1,7 @@
+scenario,origin,alpha,experiments,rejections,rejection_rate,ci_low,ci_high,zero_values_included
+null,regenerated_archive_model,0.05,30,2,0.06666666666666667,0.008178134460656307,0.22073540152296187,0
+null,regenerated_archive_model,0.01,30,0,0.0,0.0,0.11570330822202778,0
+null,regenerated_archive_model,0.001,30,0,0.0,0.0,0.11570330822202778,0
+alternative,regenerated_archive_model,0.05,30,11,0.36666666666666664,0.19929862501203444,0.5614401509880425,0
+alternative,regenerated_archive_model,0.01,30,4,0.13333333333333333,0.037553496338363315,0.30721835027612676,0
+alternative,regenerated_archive_model,0.001,30,0,0.0,0.0,0.11570330822202778,0

@@ -1,0 +1,9 @@
+Passed: relocated project used its matching three-group final cache from a different working directory.
+[cache] /mnt/data/clean_project_work/relocated/InOutCurves_clean/dumps/examples/compare_three_groups/final/comparison.pkl
+Groups: CTR, ANH, RES; design=independent; subjects=[6, 6, 5]
+L2_Grand=42.1643082; p=0.2159; monte_carlo, 9,999 allocations
+  CTR vs ANH: p=0.5; Holm=0.5; gated rejection=False
+  CTR vs RES: p=0.101732; Holm=0.305195; gated rejection=False
+  ANH vs RES: p=0.231602; Holm=0.463203; gated rejection=False
+Results: /mnt/data/clean_project_work/relocated/InOutCurves_clean/dumps/examples/compare_three_groups/final
+Figures: /mnt/data/clean_project_work/relocated/InOutCurves_clean/figures/examples/compare_three_groups/final

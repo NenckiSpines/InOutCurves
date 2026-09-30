@@ -1,0 +1,86 @@
+{
+  "workflow": "poster_validation",
+  "fingerprint": "6797160e083e16134e0130f9ddfcc291f0d2a3fc5273c6d28868f90fa3cea295",
+  "identity": {
+    "engine_version": "2.0.0-clean",
+    "script_sha256": "bb0ba21898a4a666af210ca2d7224451cc50131a9eb99d6b2083818178410dcb",
+    "shared_code_sha256": "a9b6720e05014a1886f571895f84e9cee23f64c08074bda8071f0ae18afca89d",
+    "source_sha256": "dec894d76eb1a74220fe0a1b948ff0014ec7bff0928380479cc61e465be4c182",
+    "config": {
+      "mode": "test",
+      "model": "archive",
+      "permutations": 199,
+      "experiments": 30,
+      "sample_sizes": [
+        5,
+        10,
+        20
+      ],
+      "representative_n": 10,
+      "alpha": 0.05,
+      "seed": 20260919,
+      "exact_limit": 50000,
+      "control_group": "PRE",
+      "ltp_group": "POST"
+    },
+    "model_parameters": {
+      "gain_location": 0.12757045614297235,
+      "gain_scale": 0.8724295438570279,
+      "noise_sd": [
+        0.054885048194197456,
+        0.05676759556530963,
+        0.10814783762667769,
+        0.13004693391945915,
+        0.124372052893709,
+        0.09618222782118657,
+        0.07518932352814438,
+        0.04667043664556347,
+        0.04105516959123446,
+        0.045754366942977215,
+        0.06974427826764401,
+        0.08754087417925256,
+        0.10359794124335046
+      ],
+      "stimulus_grid": [
+        0,
+        25,
+        50,
+        75,
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250,
+        275,
+        300
+      ],
+      "recordings_per_subject": 3,
+      "calibration": "Historical fixed-parameter model. Noise standard deviations are undetrended residual SDs; independent gain/noise draws per recording. No subject-shared effect.",
+      "file_sha256": "5819c72d0b6a82a0574a37a328fa30761f31ba3af6f331df09f47b61a655d657"
+    },
+    "numpy_version": "2.3.5",
+    "scipy_version": "1.17.0"
+  },
+  "created_utc": "2026-09-28T20:08:43.139659+00:00",
+  "source_file": "/mnt/data/InOutCurves_clean/input_data/ltp_paired.csv",
+  "project_directory": "/mnt/data/InOutCurves_clean",
+  "python_version": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "matplotlib_version": "3.10.8",
+  "complete": true,
+  "last_completed_utc": "2026-09-28T20:08:45.954880+00:00",
+  "completed_experiments": 180,
+  "last_plot_settings": {
+    "dpi": 160,
+    "formats": [
+      "png",
+      "pdf",
+      "svg"
+    ],
+    "response_label": "fEPSP slope (source units)",
+    "stimulation_label": "Stimulation current (\u00b5A)"
+  },
+  "last_jobs": 1
+}

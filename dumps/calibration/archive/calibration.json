@@ -1,0 +1,24 @@
+{
+  "model": "archive",
+  "description": "Archive generator: fixed shifted-exponential gain and stimulus-specific Gaussian noise; three independent recordings averaged per simulated subject.",
+  "gain_location": 0.12757045614297235,
+  "gain_scale": 0.8724295438570279,
+  "noise_sd": [
+    0.054885048194197456,
+    0.05676759556530963,
+    0.10814783762667769,
+    0.13004693391945915,
+    0.124372052893709,
+    0.09618222782118657,
+    0.07518932352814438,
+    0.04667043664556347,
+    0.04105516959123446,
+    0.045754366942977215,
+    0.06974427826764401,
+    0.08754087417925256,
+    0.10359794124335046
+  ],
+  "input_sha256": "dec894d76eb1a74220fe0a1b948ff0014ec7bff0928380479cc61e465be4c182",
+  "recordings_per_subject": 3,
+  "note": "Fixed selected model, not an automated best-distribution claim."
+}

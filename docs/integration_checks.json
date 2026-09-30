@@ -1,0 +1,137 @@
+{
+  "unit_tests": 47,
+  "passed": true,
+  "integration_runs": [
+    {
+      "name": "archive_model_suite",
+      "passed": true
+    },
+    {
+      "name": "calibration_archive",
+      "passed": true
+    },
+    {
+      "name": "calibration_within_group",
+      "passed": true
+    },
+    {
+      "name": "compare_independent_subjects_final",
+      "passed": true
+    },
+    {
+      "name": "compare_independent_subjects_test",
+      "passed": true
+    },
+    {
+      "name": "compare_same_subjects_final",
+      "passed": true
+    },
+    {
+      "name": "compare_same_subjects_test",
+      "passed": true
+    },
+    {
+      "name": "compare_three_groups_final",
+      "passed": true
+    },
+    {
+      "name": "compare_three_groups_test",
+      "passed": true
+    },
+    {
+      "name": "csv_checkpoint_resume",
+      "passed": true
+    },
+    {
+      "name": "example_cache_reuse",
+      "passed": true
+    },
+    {
+      "name": "external_working_directory",
+      "passed": true
+    },
+    {
+      "name": "individual_method_plot",
+      "passed": true
+    },
+    {
+      "name": "legacy_explicit_plot",
+      "passed": true
+    },
+    {
+      "name": "notebook_cache_reuse",
+      "passed": true
+    },
+    {
+      "name": "notebook_suite",
+      "passed": true
+    },
+    {
+      "name": "parallel_benchmark",
+      "passed": true
+    },
+    {
+      "name": "pickle_checkpoint_resume",
+      "passed": true
+    },
+    {
+      "name": "settings_mismatch_rejected",
+      "passed": true
+    },
+    {
+      "name": "unit_tests",
+      "passed": true
+    },
+    {
+      "name": "validation_replot",
+      "passed": true
+    },
+    {
+      "name": "validation_suite",
+      "passed": true
+    }
+  ],
+  "additional_checks": [
+    "cache_redraw_preserves_numeric_bytes",
+    "serial_parallel_raw_results_identical",
+    "csv_resume_recreates_original_complete_result",
+    "pickle_resume_recreates_original_complete_result",
+    "all_input_checksums_unchanged_after_runs",
+    "no_animal_terms_in_active_python"
+  ],
+  "seeded_null_sanity_checks": [
+    {
+      "design": "paired",
+      "groups": 2,
+      "experiments": 1000,
+      "requested_permutations": 199,
+      "alpha": 0.05,
+      "rejections": 48,
+      "rate": 0.048,
+      "binomial_95_interval": [
+        0.035600265342883276,
+        0.06314011540150925
+      ]
+    },
+    {
+      "design": "independent",
+      "groups": 3,
+      "experiments": 1000,
+      "requested_permutations": 199,
+      "alpha": 0.05,
+      "rejections": 47,
+      "rate": 0.047,
+      "binomial_95_interval": [
+        0.03473506226679596,
+        0.06201263069330515
+      ]
+    }
+  ],
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "scope": "Code validation, poster smoke runs and final-settings single-dataset examples. Full R=5000 simulation suites were NOT run."
+}

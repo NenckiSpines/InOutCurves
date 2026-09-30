@@ -1,0 +1,3 @@
+TEST / LOW-PRECISION OUTPUT: intended to check execution and figure layout, not to support scientific claims.
+
+Figure 3. Method agreement. Each point is one experiment analyzed by both tests at prespecified n=10; R=30 per scenario. (A) Null. (B) Control-LTP alternative. Axes are logarithmic. The dotted line indicates equal p-values; dashed lines mark alpha=0.05. Counts summarize joint and method-specific rejections. All experiments are included. Interpret disagreement alongside power and false-positive control.

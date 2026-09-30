@@ -1,0 +1,52 @@
+test_cache_roundtrip_and_mismatch (test_data_and_cache.CacheAndSimulationTests.test_cache_roundtrip_and_mismatch) ... ok
+test_null_simulation_independent_not_copied (test_data_and_cache.CacheAndSimulationTests.test_null_simulation_independent_not_copied) ... ok
+test_numeric_numpy_legacy_pickle (test_data_and_cache.CacheAndSimulationTests.test_numeric_numpy_legacy_pickle) ... ok
+test_sigmoid_helper_no_global_variables (test_data_and_cache.CacheAndSimulationTests.test_sigmoid_helper_no_global_variables) ... ok
+test_simulation_deterministic (test_data_and_cache.CacheAndSimulationTests.test_simulation_deterministic) ... ok
+test_simulation_models_differ_explicitly (test_data_and_cache.CacheAndSimulationTests.test_simulation_models_differ_explicitly) ... ok
+test_unsafe_pickle_global_rejected (test_data_and_cache.CacheAndSimulationTests.test_unsafe_pickle_global_rejected) ... ok
+test_archive_data_available_and_paired (test_data_and_cache.SubjectDataTests.test_archive_data_available_and_paired) ... ok
+test_archived_two_group_exact_reference (test_data_and_cache.SubjectDataTests.test_archived_two_group_exact_reference) ... ok
+test_average_within_subject_condition (test_data_and_cache.SubjectDataTests.test_average_within_subject_condition) ... ok
+test_independent_group_sizes_preserved (test_data_and_cache.SubjectDataTests.test_independent_group_sizes_preserved) ... ok
+test_independent_shared_ids_error (test_data_and_cache.SubjectDataTests.test_independent_shared_ids_error) ... ok
+test_missing_pairs_error (test_data_and_cache.SubjectDataTests.test_missing_pairs_error) ... ok
+test_missing_responses_no_interpolation (test_data_and_cache.SubjectDataTests.test_missing_responses_no_interpolation) ... ok
+test_pair_reassignment_preserves_ids (test_data_and_cache.SubjectDataTests.test_pair_reassignment_preserves_ids) ... ok
+test_paired_order_invariance (test_data_and_cache.SubjectDataTests.test_paired_order_invariance) ... ok
+test_roundtrip_csv (test_data_and_cache.SubjectDataTests.test_roundtrip_csv) ... ok
+test_unknown_group_rejected (test_data_and_cache.SubjectDataTests.test_unknown_group_rejected) ... ok
+test_common_grid_refinement (test_inference.DistanceTests.test_common_grid_refinement) ... ok
+test_constant_distance (test_inference.DistanceTests.test_constant_distance) ... ok
+test_grand_sum_is_not_squared_again (test_inference.DistanceTests.test_grand_sum_is_not_squared_again) ... ok
+test_invalid_grids (test_inference.DistanceTests.test_invalid_grids) ... ok
+test_linear_distance (test_inference.DistanceTests.test_linear_distance) ... ok
+test_mass_matrix (test_inference.DistanceTests.test_mass_matrix) ... ok
+test_all_zero_statistics (test_inference.PermutationTests.test_all_zero_statistics) ... ok
+test_exact_four_group_generalization (test_inference.PermutationTests.test_exact_four_group_generalization) ... ok
+test_exact_paired_against_scipy (test_inference.PermutationTests.test_exact_paired_against_scipy) ... ok
+test_exact_safety_limit (test_inference.PermutationTests.test_exact_safety_limit) ... ok
+test_exact_three_group_against_scipy (test_inference.PermutationTests.test_exact_three_group_against_scipy) ... ok
+test_exact_two_group_against_scipy (test_inference.PermutationTests.test_exact_two_group_against_scipy) ... ok
+test_grand_for_two_groups (test_inference.PermutationTests.test_grand_for_two_groups) ... ok
+test_group_order_invariance_exact (test_inference.PermutationTests.test_group_order_invariance_exact) ... ok
+test_invalid_counts (test_inference.PermutationTests.test_invalid_counts) ... ok
+test_invalid_paired_shape (test_inference.PermutationTests.test_invalid_paired_shape) ... ok
+test_monte_carlo_plus_one (test_inference.PermutationTests.test_monte_carlo_plus_one) ... ok
+test_paired_not_independent_allocation_space (test_inference.PermutationTests.test_paired_not_independent_allocation_space) ... ok
+test_partition_count_unequal_sizes (test_inference.PermutationTests.test_partition_count_unequal_sizes) ... ok
+test_scaling_and_common_shift (test_inference.PermutationTests.test_scaling_and_common_shift) ... ok
+test_seed_reproducible (test_inference.PermutationTests.test_seed_reproducible) ... ok
+test_binomial_endpoints (test_inference.PosthocAndReferenceTests.test_binomial_endpoints) ... ok
+test_holm_invalid (test_inference.PosthocAndReferenceTests.test_holm_invalid) ... ok
+test_holm_known_values (test_inference.PosthocAndReferenceTests.test_holm_known_values) ... ok
+test_holm_order_and_ties (test_inference.PosthocAndReferenceTests.test_holm_order_and_ties) ... ok
+test_independent_anova_matches_scipy (test_inference.PosthocAndReferenceTests.test_independent_anova_matches_scipy) ... ok
+test_omnibus_gate (test_inference.PosthocAndReferenceTests.test_omnibus_gate) ... ok
+test_pair_specific_null_and_full_family (test_inference.PosthocAndReferenceTests.test_pair_specific_null_and_full_family) ... ok
+test_paired_reference_matches_t (test_inference.PosthocAndReferenceTests.test_paired_reference_matches_t) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 0.401s
+
+OK

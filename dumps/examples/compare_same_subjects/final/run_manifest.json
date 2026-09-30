@@ -1,0 +1,23 @@
+{
+  "spec": {
+    "workflow": "subject_comparison",
+    "input_sha256": "dec894d76eb1a74220fe0a1b948ff0014ec7bff0928380479cc61e465be4c182",
+    "shared_code_sha256": "a9b6720e05014a1886f571895f84e9cee23f64c08074bda8071f0ae18afca89d",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "groups": [
+      "PRE",
+      "POST"
+    ],
+    "design": "paired",
+    "permutations": 9999,
+    "seed": 20260919,
+    "alpha": 0.05,
+    "exact": "auto",
+    "exact_limit": 50000,
+    "require_omnibus": true
+  },
+  "data_path": "/mnt/data/InOutCurves_clean/input_data/ltp_paired.csv",
+  "figure_directory": "/mnt/data/InOutCurves_clean/figures/examples/compare_same_subjects/final",
+  "mode": "final"
+}

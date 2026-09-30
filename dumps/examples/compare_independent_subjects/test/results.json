@@ -1,0 +1,64 @@
+{
+  "groups": [
+    "ANH",
+    "RES"
+  ],
+  "design": "independent",
+  "subject_ids": [
+    [
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    [
+      "101",
+      "102",
+      "103",
+      "104",
+      "105"
+    ]
+  ],
+  "subject_counts": [
+    6,
+    5
+  ],
+  "recording_counts": [
+    20,
+    15
+  ],
+  "statistic_definition": "integral (mean_1-mean_2)^2 dx",
+  "omnibus": {
+    "statistic": 9.299074490640145,
+    "pvalue": 0.24,
+    "design": "independent",
+    "method": "monte_carlo",
+    "requested_permutations": 199,
+    "evaluated_permutations": 199,
+    "total_allocations": 462,
+    "group_sizes": [
+      6,
+      5
+    ]
+  },
+  "alpha": 0.05,
+  "omnibus_reject": false,
+  "posthoc": [],
+  "pairwise_distances": [
+    {
+      "group_1": "ANH",
+      "group_2": "RES",
+      "l2_squared": 9.299074490640145
+    }
+  ],
+  "require_omnibus": true,
+  "anova_comparator": {
+    "name": "Mixed-design ANOVA Group main effect",
+    "f_value": 1.5363077687707873,
+    "pvalue": 0.24651443240614182
+  },
+  "assumption": "Exchangeability of complete subject curves across groups under the null.",
+  "units": "Response units squared multiplied by stimulus units; no response-unit assumption made."
+}
